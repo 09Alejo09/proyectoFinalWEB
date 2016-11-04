@@ -27,6 +27,7 @@ class EmpleadoDAO {
     public function guardar(Empleado $obj) {
 
         $sql = "insert into empleados(id_empleado,cedula, nombre, apellido, ,edad, id_cargo, id_sucursal, descripcion) values('" .
+                
                 $obj->getId_sucurusal() . "','" . $obj->getCedula() . "','" . $obj->getNombre() .
                 $obj->getApellido() . "','" . $obj->getEdad() . "','" . $obj->getId_cargo() . "','" .
                 $obj->getId_sucursal() . "','" . $obj->getDescripcion() . ");";

@@ -24,7 +24,7 @@ class CargoDAO {
 
     public function guardar(Cargo $obj) {
 
-        $sql = "insert into cargos(idCargo,nombreCargo,salario,intensidadHoraria) values('" .
+        $sql = "insert into cargo(idCargo,nombreCargo,salario,intensidadHoraria) values('" .
                 $obj->getIdCargo() . "','" . $obj->getNombreCargo() . "','" .$obj->getsalario() . "','" . $obj->getIntensidadHoraria() . ");";
 
         $resultado = $this->object->ejecutar($sql);
