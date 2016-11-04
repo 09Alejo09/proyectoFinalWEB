@@ -104,7 +104,7 @@ class CargoDAO {
         } else {
             $cadenaHTML .= "<b>No hay registros en la base de datos</b>";
         }
-        header('Location:../index.php?page=cargos&&info_list=' . $cadenaHTML);
+        header('Location:../index.php?page=cargo&&info_list=' . $cadenaHTML);
     }
 
 }
