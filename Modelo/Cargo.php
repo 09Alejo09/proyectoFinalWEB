@@ -13,52 +13,49 @@
  */
 class Cargo {
 
-    private $idCargo;
     private $nombreCargo;
-    private $salario;
     private $intensidadHoraria;
-   
+    private $salario;
+    private $descripcion;
     
-    
-    function Cargo($idCargo,$nombreCargo,  $salario, $intensidadHoraria) {
-        $this->id = $idCargo;
-        $this->codigo = $nombreCargo;
-        $this->nombre = $salario;
-        $this->apellido = $intensidadHoraria;
-      
+    function __construct($nombreCargo, $intensidadHoraria, $salario, $descripcion) {
+        $this->nombreCargo = $nombreCargo;
+        $this->intensidadHoraria = $intensidadHoraria;
+        $this->salario = $salario;
+        $this->descripcion = $descripcion;
     }
-
-    function getIdCargo() {
-        return $this->id;
-    }
-
     function getNombreCargo() {
         return $this->nombreCargo;
-    }
-
-    function getSalario() {
-        return $this->salario;
     }
 
     function getIntensidadHoraria() {
         return $this->intensidadHoraria;
     }
 
-
-    function setId($idCargo) {
-        $this->id = $id;
+    function getSalario() {
+        return $this->salario;
     }
 
-    function setCodigo($nombreCargo) {
-        $this->codigo = $nombreCargo;
+    function getDescripcion() {
+        return $this->descripcion;
     }
 
-    function setNombre($salario) {
-        $this->nombre = $salario;
+    function setNombreCargo($nombreCargo) {
+        $this->nombreCargo = $nombreCargo;
     }
 
-    function setApellido($intensidadHoraria) {
-        $this->apellido = $intensidadHoraria;
+    function setIntensidadHoraria($intensidadHoraria) {
+        $this->intensidadHoraria = $intensidadHoraria;
     }
 
+    function setSalario($salario) {
+        $this->salario = $salario;
+    }
+
+    function setDescripcion($descripcion) {
+        $this->descripcion = $descripcion;
+    }
+
+
+    
 }
