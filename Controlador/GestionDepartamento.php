@@ -5,7 +5,7 @@ require '../DAO/DepartamentoDAO.php';
 
 isset($_REQUEST['txtNombre']) ? $nombre = $_REQUEST['txtNombre'] : $nombre = "";
 isset($_REQUEST['txtDescripcion']) ? $descripcion = $_REQUEST['txtDescripcion'] : $descripcion = "";
-isset($_REQUEST['pais']) ? $pais = $_REQUEST['txtPais'] : $pais = "";
+isset($_REQUEST['txtPais']) ? $pais = $_REQUEST['txtPais'] : $pais = "";
 isset($_REQUEST['type']) ? $accion = $_REQUEST['type'] : $accion = "";
 
 $sucursal = new Departamento($nombre,$descripcion,$pais);
