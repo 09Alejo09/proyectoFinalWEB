@@ -1,3 +1,4 @@
+
 <html lang="en">
     <!--<![endif]-->
     <!-- HEAD SECTION -->
@@ -13,14 +14,14 @@
         <!--GOOGLE FONT -->
         <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
         <!--BOOTSTRAP MAIN STYLES -->
-        <link href="bootstrap.css" rel="stylesheet" />
+        <link href="Recursos/Pluggins/bootstrap.css" rel="stylesheet" />
         <!--FONTAWESOME MAIN STYLE -->
-        <link href="font-awesome.min.css" rel="stylesheet" />
-        <link href="csslogin.css" rel="stylesheet" type="text/css"/>
+        <link href="Recursos/Pluggins/font-awesome.min.css" rel="stylesheet" />
+        <link href="Recursos/css/csslogin.css" rel="stylesheet" type="text/css"/>
         <!--CUSTOM STYLE -->
         <link href="assets/css/style.css" rel="stylesheet" />
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <link href="css.css" rel="stylesheet" type="text/css"/>
+        <link href="Recursos/css/css.css" rel="stylesheet" type="text/css"/>
         <!--[if lt IE 9]>
           <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
           <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
@@ -28,81 +29,91 @@
     </head>
     <!--END HEAD SECTION -->
     <body>  
-        <div class="container">
+        <div class="loader"></div>
+        <!--END NAV SECTION -->
+        <!-- HEADER SECTION -->
+        <div id="header-section">
+            <div class="container">
                 <div class="row text-center">
                     <div class="col-md-10 col-md-offset-1 col-sm-12">
-                        <h3><strong id="st"> BIENVENIDO ADMINISTRADOR<br> PAISES </br></strong></h3>          
+                        <h3><strong id="st"> BIENVENIDO ADMINISTRADOR <br> PAIS </br></strong></h3>          
 
-                           
+
                     </div>
                 </div>
-                <div class="container">
-            <div class="top">
-                <h1 id="title" class="hidden"><span id="logo">Banco <span>INTERCONTINENTAL</span> del ORO</span></h1>
-            </div>
-            <div class="login-box animated fadeInUp">
-                <div class="box-header">
-                    <h4>Pais</h4>
+                <div class="contenido">
+                    <div class="top">
+                        <h1 id="title" class="hidden"><span id="logo">Banco <span>INTERCONTINENTAL</span> del ORO</span></h1>
+                    </div>
+                    <div class="login-box animated fadeInUp">
+                        <div class="box-header">
+                            <h4>Directivos</h4>
+                        </div>
+                        <form name="formularioPais" method="post" id="formPais" action="Controlador/GestionPais.php">
+
+                            <label for="nombre">Nombre</label>
+                            <br/>
+                            <input type="text" id="txtNombre" name="nombre" 
+                                   value="<?php
+                                   isset($_REQUEST['nombre']) ?
+                                                   print $_REQUEST['nombre'] : print"";
+                                   ?>">
+                            <div class="oculto">
+                                <div rowspan="10" class="listado">
+                                    <?php
+                                    if (isset($_REQUEST['info_list'])) {
+                                        echo $_REQUEST['info_list'];
+                                    }
+                                    ?>
+                                </div>
+                            </div>
+
+                            <br/>
+                            <label for="descripcion">Descripcion</label>
+                            <br/>
+                            <input type="text" id="txtDescripcion" name="descripcion" 
+                                   value="<?php
+                                   isset($_REQUEST['descripcion']) ?
+                                                   print $_REQUEST['descripcion'] : print"";
+                                   ?>">
+                            <div class="oculto">
+                                <div rowspan="10" class="listado">
+                                    <?php
+                                    if (isset($_REQUEST['info_list'])) {
+                                        echo $_REQUEST['info_list'];
+                                    }
+                                    ?>
+                                </div>
+                            </div>
+
+                            <br/>
+                            <input type="text" id="txtType" name="type" class="oculto">
+                            <br/>
+                            <input type="button" value="Guardar" id="btnGuardar" onclick="validarDirectivo('save');">
+                            <input type="button" value="Buscar" id="btnBuscar" onclick="validarDirectivo('search');">
+                            <br/>
+                            <input type="button" value="Editar" id="btnEditar" onclick="validarDirectivo('update');">
+                            <input type="button" value="Eliminar" id="btnEliminar" onclick="validarDirectivo('delete');">
+                            <br/>
+                            <input type="button" value="Listar" id="btnListar" onclick="validarDirectivo('list');">
+                            <br/>
+                        </form>
+
+                        <?php
+                        if (isset($_REQUEST['message'])) {
+                            echo $_REQUEST['message'];
+                        }
+                        ?>
+
+                        <br/>
+                    </div>
                 </div>
-                <form name="formularioPais" method="post" id="formPais" action="Controlador/GestionPais.php">
-                <label for="nombre">Nombre</label>
-                <br/>
-                <input type="text" id="txtNombrePais" name="nombrePais" 
-                        value="<?php isset($_REQUEST['nombrePais']) ?
-                                     print $_REQUEST['nombrePais'] : print"";
-                        ?>">
-                    <div class="oculto">
-                    <div rowspan="10" class="listado">
-                        <?php
-                        if (isset($_REQUEST['info_list'])) {
-                            echo $_REQUEST['info_list'];
-                        }
-                        ?>
-                    </div>
-                    </div>
-                <br/>
-                <label for="descripcion">Descripcion</label>
-                <br/>
-                <input type="text" id="txtDescripcionPais" name="descripcionPais" 
-                        value="<?php isset($_REQUEST['descripcionPais']) ?
-                                     print $_REQUEST['descripcionPais'] : print"";
-                        ?>"><br/>
-                <div class="oculto">
-                    <div rowspan="10" class="listado">
-                        <?php
-                        if (isset($_REQUEST['info_list'])) {
-                            echo $_REQUEST['info_list'];
-                        }
-                        ?>
-                    </div>
-                    </div>
-                <br>
-                  <input type="text" id="txtType" name="type" class="oculto">
-                  <br>    
-                    <input type="button" value="Guardar" id="btnGuardar" onclick="validarPais('save');">
-                    <input type="button" value="Buscar" id="btnBuscar" onclick="validarPais('search');">
-                    <br/>
-                 <input type="button" value="Editar" id="btnEditar" onclick="validarPais('update');">
-                        <input type="button" value="Eliminar" id="btnEliminar" onclick="validarPais('delete');">
-                    <br/>
-                    <input type="button" value="Listar" id="btnListar" onclick="validarPais('list');">
-                    <br>
-                
-                </form>
-                <?php
-        if (isset($_REQUEST['message'])) {
-            echo $_REQUEST['message'];
-        }
-        ?>
-                <br/>
-            </div>
-        </div>
 
 
             </div>
 
         </div> 
-      
+
         <!--END BASIC INFO SECTION -->
         <!--FOOTER SECTION -->
         <div id="footer">
@@ -115,7 +126,7 @@
             </div>
 
         </div>  
-       
+
         <script src="jquery.js"></script>
         <!-- CORE BOOTSTRAP LIBRARY -->
         <script src="bootstrap.min.js"></script>
