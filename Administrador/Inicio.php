@@ -34,65 +34,6 @@ and open the template in the editor.
 
         <div class="row main-top-margin text-center">
             <div class="col-md-8 col-md-offset-2 " >
-                <!--<h1></h1>
-                <h4>
-                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                     Curabitur nec nisl odio. Mauris vehicula at nunc id posuere.
-                </h4>
-            </div>
-        </div>
-       <div class="row main-low-margin text-center">
-            <div class="col-md-4 col-sm-6" >
-                    <div class="text-center">
-                        <i class="fa fa-bolt fa-5x color-red"></i>
-                        <h4>Responsive Design</h4>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec enim sapien. Aliquam erat volutpat.
-                     Quisque eu ante at tortor imperdiet gravida nec sed turpis. Phasellus augue augue.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6"  >
-                    <div class="text-center">
-                        <i class="fa fa-comments fa-5x color-green"></i>
-                        <h4>24x7 Support</h4>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec enim sapien. Aliquam erat volutpat.
-                     Quisque eu ante at tortor imperdiet gravida nec sed turpis. Phasellus augue augue.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6" >
-                    <div class="text-center">
-                        <i class="fa fa-desktop fa-5x color-light-blue"></i>
-                        <h4>Awesome Display</h4>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec enim sapien. Aliquam erat volutpat.
-                     Quisque eu ante at tortor imperdiet gravida nec sed turpis. Phasellus augue augue.
-                        </p>
-                    </div>
-                </div>
-       </div>
-
-             <div class="row main-low-margin text-center">
-         
-            <div class="col-md-12 col-sm-12  text-justify" >
-                <h3> Lorem ipsum dolor sit amet Riopsh</h3>
-                <p>
-                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                     Curabitur nec nisl odio. Mauris vehicula at nunc id posuere.
-                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                     Curabitur nec nisl odio. Mauris vehicula at nunc id posuere.
-                     Curabitur nec nisl odio. Mauris vehicula at nunc id posuere.
-
-                </p>
-                <p>
-                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                     Curabitur nec nisl odio. Mauris vehicula at nunc id posuere.
-
-                </p>
-            </div>
-                 </div> -->
                 <div class="row main-low-margin text-center">
 
 
@@ -101,7 +42,6 @@ and open the template in the editor.
                         <p>
                             Entregar a nuestros clientes un servicio bancario de optima calidad en el mundo entero, sin limitaciones
                             y con la intencion de minimizar errores de seguridad y disponibilidad en un 99 porciento.
-
                         </p>
                         <h3>VISION</h3>
                         <p>
@@ -143,8 +83,7 @@ and open the template in the editor.
             </div>
         </div>
     </div>
-</div>    <!--END BASIC INFO SECTION -->
-<!--FOOTER SECTION -->
+</div>    
 <div id="footer">
     <div class="container">
         <div class="row ">
@@ -155,9 +94,7 @@ and open the template in the editor.
     </div>
 
 </div>  
-<!--END FOOTER SECTION -->
-<!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
-<!-- CORE JQUERY LIBRARY -->
+
 <script src="assets/js/jquery.js"></script>
 <!-- CORE BOOTSTRAP LIBRARY -->
 <script src="assets/js/bootstrap.min.js"></script>

@@ -71,10 +71,10 @@
                             <br/>
                             <label for="cedula">Cedula</label>
                             <br/>
-                            <input type="text" id="txtCedulaEmpleado" name="apellidoDirectivo" 
+                            <input type="text" id="txtCedula" name="cedula" 
                                    value="<?php
-                                   isset($_REQUEST['apellidoDirectivo']) ?
-                                                   print $_REQUEST['apellidoDirectivo'] : print"";
+                                   isset($_REQUEST['cedula']) ?
+                                                   print $_REQUEST['cedula'] : print"";
                                    ?>">
                             <div class="oculto">
                                 <div rowspan="10" class="listado">
@@ -87,13 +87,13 @@
                             </div>
 
                             <br/>
-                            <label for="cedula">Cedula</label>
+                            <label for="nombre">Nombre</label>
                             <br/>
-                            <input type="text" id="txtCedulaDirectivo" name="cedulaDirectivo" 
+                            <input type="text" id="txtNombre" name="nombre" 
                                    value="<?php
-                                    isset($_REQUEST['cedulaDirectivo']) ?
-                                                    print $_REQUEST['cedulaDirectivo'] : print"";
-                                    ?>">
+                                   isset($_REQUEST['nombre']) ?
+                                                   print $_REQUEST['nombre'] : print"";
+                                   ?>">
 
                             <div class="oculto">
                                 <div rowspan="10" class="listado">
@@ -105,13 +105,13 @@
                                 </div>
                             </div>
                             <br/>
-                            <label for="telefono">Telefono</label>
+                            <label for="edad">Edad</label>
                             <br/>
-                            <input type="text" id="txtTelefonoDirectivo" name="telefonoDirectivo" 
+                            <input type="text" id="txtEdad" name="edad" 
                                    value="<?php
-                                    isset($_REQUEST['telefonoDirectivo']) ?
-                                                    print $_REQUEST['telefonoDirectivo'] : print"";
-                                    ?>">
+                                   isset($_REQUEST['edad']) ?
+                                                   print $_REQUEST['edad'] : print"";
+                                   ?>">
 
                             <div class="oculto">
                                 <div rowspan="10" class="listado">
@@ -123,22 +123,59 @@
                                 </div>
                             </div>
                             <br/>
-                            <label for="fechaNacimiento">Fecha de Nacimiento</label>
+                            <label for="descripcion">Fecha de Nacimiento</label>
                             <br/>
-                            <input type="text" id="txtFechaDeNacimiento" name="fechaDeNacimiento" 
+                            <input type="text" id="txtDescripcion" name="descripcion" 
                                    value="<?php
-                                    isset($_REQUEST['fechaDeNacimiento']) ?
-                                                    print $_REQUEST['fechaDeNacimiento'] : print"";
-                                    ?>">
+                                   isset($_REQUEST['descripcion']) ?
+                                                   print $_REQUEST['descripcion'] : print"";
+                                   ?>">
                             <div class="oculto">
                                 <div rowspan="10" class="listado">
-<?php
-if (isset($_REQUEST['info_list'])) {
-    echo $_REQUEST['info_list'];
-}
-?>
+                                    <?php
+                                    if (isset($_REQUEST['info_list'])) {
+                                        echo $_REQUEST['info_list'];
+                                    }
+                                    ?>
                                 </div>
                             </div>
+                            <br/>
+                            <label for="cargo">Cargo</label>
+                            <br/>
+                            <input type="text" id="txtCargo" name="cargo" 
+                                   value="<?php
+                                   isset($_REQUEST['cargo']) ?
+                                                   print $_REQUEST['cargo'] : print"";
+                                   ?>">
+                            <div class="oculto">
+                                <div rowspan="10" class="listado">
+                                    <?php
+                                    if (isset($_REQUEST['info_list'])) {
+                                        echo $_REQUEST['info_list'];
+                                    }
+                                    ?>
+                                </div>
+                            </div>
+                            
+                            <br/>
+                            <label for="idsucursal">Id sucursal</label>
+                            <br/>
+                            <input type="text" id="txtIdsucursal" name="idsucursal" 
+                                   value="<?php
+                                   isset($_REQUEST['idsucursal']) ?
+                                                   print $_REQUEST['idsucursal'] : print"";
+                                   ?>">
+                            <div class="oculto">
+                                <div rowspan="10" class="listado">
+                                    <?php
+                                    if (isset($_REQUEST['info_list'])) {
+                                        echo $_REQUEST['info_list'];
+                                    }
+                                    ?>
+                                </div>
+                            </div>
+                            
+                            
                             <br/>
                             <input type="text" id="txtType" name="type" class="oculto">
                             <br/>
@@ -152,11 +189,11 @@ if (isset($_REQUEST['info_list'])) {
                             <br/>
                         </form>
 
-<?php
-if (isset($_REQUEST['message'])) {
-    echo $_REQUEST['message'];
-}
-?>
+                        <?php
+                        if (isset($_REQUEST['message'])) {
+                            echo $_REQUEST['message'];
+                        }
+                        ?>
 
                         <br/>
                     </div>
