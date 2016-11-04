@@ -24,16 +24,16 @@ class CargoDAO {
 
     public function guardar(Cargo $obj) {
 
-        $sql = "insert into cargos(idCargo,nombreCargo,salario,intensidadHoraria) values('" .
-                $obj->getIdCargo() . "','" . $obj->getNombreCargo() . "','" .$obj->getsalario() . "','" . $obj->getIntensidadHoraria() . ");";
-
+        $sql = "insert into cargo(nombre,intensidad,salario,descripcion) values('" .
+                $obj->getNombre() . "','" . $obj->getIntensidad() . "'," .$obj->getsalario() . ",'" . $obj->getDescripcion() . ");";
+        echo $sql;
         $resultado = $this->object->ejecutar($sql);
-        $this->object->respuesta($resultado, 'cargos');
+        $this->object->respuesta($resultado, 'cargo');
     }
 
     public function Buscar(Cargo $obj) {
-        $sql = "SELECT idCargo,nomreCargo,salario,intensidadHoraria from sucursales " . "where idCargo='" .
-                $obj->getIdCargo() . "';";
+        $sql = "SELECT nombre,intensidad,salario,descripcion from cargo where nombre='" .
+                $obj->getNombre() . "';";
         $resultado = $this->object->ejecutar($sql);
         $this->construirBusqueda($resultado);
     }
@@ -42,35 +42,36 @@ class CargoDAO {
         $vec = pg_fetch_row($resultado);
 
         if (isset($vec) && $vec[0] != "") {
-            $lista = "id_Cargo=" . $vec[0] . "&&";
-            $lista .= "nombre_cargo=" . $vec[1] . "&&";
+            $lista = "nombre=" . $vec[0] . "&&";
+            $lista .= "intensidad=" . $vec[1] . "&&";
             $lista .= "salario=" . $vec[2]. "&&";
-            $lista .= "intensidad_horaria=" . $vec[3];
+            $lista .= "decripcion=" . $vec[3];
 
-            header('Location:../index.php?page=cargos&&' . $lista);
+            header('Location:../index.php?page=cargo&&' . $lista);
         } else {
             $mensaje = "No se encontro informacion";
-            header('Location:../index.php?page=cargos&&message=' . $mensaje);
+            header('Location:../index.php?page=Cargo&&message=' . $mensaje);
         }
     }
 
     public function modificar(Cargo $obj) {
-        $sql = "update cargo set idCargo='" . $obj->getIdCargo() . "'" .
-                ",nombreCargo='" . $obj->getNombreCargo() . "',salario='" . $obj->getSalario() . "'" .
-                ",intensidadHoraria='" . $obj->getIntensidadHoraria()  .
-                "where idCargo=" . $obj->getIdCargo();
+        $sql = "update cargo set nombre='" . $obj->getNombre() . "'" .
+                ",intensidad='" . $obj->getIntensidad() . 
+                "',salario='" . $obj->getSalario() . "'" .
+                ",intensidadHoraria='" . $obj->getDescripcion()  .
+                "where nombre=" . $obj->getNombre();
         $resultado = $this->object->ejecutar($sql);
-        $this->object->respuesta($resultado, 'cargos');
+        $this->object->respuesta($resultado, 'cargo');
     }
 
     public function eliminar(Cargo $obj) {
-        $sql = "delete from cargos where idCargo=" . $obj->getIdCargo();
+        $sql = "delete from cargo where nombre=" . $obj->getNombre();
         $resultado = $this->object->ejecutar($sql);
-        $this->object->respuesta($resultado, 'cargos');
+        $this->object->respuesta($resultado, 'cargo');
     }
 
     public function listar(Cargo $obj) {
-        $sql = "select idCargo,nombreCargo,salario,intensidadHoraria from sucursales";
+        $sql = "select nombre,intensidad,salario,descripcion from cargo";
         $resultado = $this->object->ejecutar($sql);
         $this->construirListado($resultado);
     }
@@ -80,8 +81,8 @@ class CargoDAO {
         if ($resultado && pg_num_rows($resultado) > 0) {
             $cadenaHTML = "<table border='1'>";
             $cadenaHTML .="<tr>";
-            $cadenaHTML .="<th>idCargo</th>";
-            $cadenaHTML .="<th>NombreCargo</th>";
+            $cadenaHTML .="<th>nombre</th>";
+            $cadenaHTML .="<th>intensidad</th>";
             $cadenaHTML .="<th>Salario</th>";
             $cadenaHTML .="<th>IntensidadHoraria</th>";
            
