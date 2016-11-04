@@ -7,29 +7,29 @@
  */
 
 /**
- * Description of Estudiante
+ *
  *
  * @author 
  */
 class Cargo {
 
-    private $nombreCargo;
-    private $intensidadHoraria;
+    private $nombre;
+    private $intensidad;
     private $salario;
     private $descripcion;
     
-    function __construct($nombreCargo, $intensidadHoraria, $salario, $descripcion) {
-        $this->nombreCargo = $nombreCargo;
-        $this->intensidadHoraria = $intensidadHoraria;
+    function __construct($nombre, $intensidad, $salario, $descripcion) {
+        $this->nombre = $nombreCargo;
+        $this->intensidad = $intensidad;
         $this->salario = $salario;
         $this->descripcion = $descripcion;
     }
-    function getNombreCargo() {
-        return $this->nombreCargo;
+    function getNombre() {
+        return $this->nombre;
     }
 
-    function getIntensidadHoraria() {
-        return $this->intensidadHoraria;
+    function getIntensidad() {
+        return $this->intensidad;
     }
 
     function getSalario() {
@@ -40,12 +40,12 @@ class Cargo {
         return $this->descripcion;
     }
 
-    function setNombreCargo($nombreCargo) {
-        $this->nombreCargo = $nombreCargo;
+    function setNombre($nombre) {
+        $this->nombreCargo = $nombre;
     }
 
-    function setIntensidadHoraria($intensidadHoraria) {
-        $this->intensidadHoraria = $intensidadHoraria;
+    function setIntensidad($intensidad) {
+        $this->intensidadHoraria = $intensidad;
     }
 
     function setSalario($salario) {

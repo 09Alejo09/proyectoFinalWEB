@@ -3,13 +3,13 @@
 require '../Modelo/Cargo.php';
 require '../DAO/CargoDAO.php';
 
-isset($_REQUEST['nombreCargo']) ? $nombreCargo = $_REQUEST['nombreCargo'] : $nombreCargo = "";
-isset($_REQUEST['intensidadHoraria']) ? $intensisadHoraria = $_REQUEST['intensidadHoraria'] : $semestre = "";
-isset($_REQUEST['salarioCargo']) ? $salarioCargo = $_REQUEST['salarioCargo'] : $salarioCargo = "";
-isset($_REQUEST['descripcionCargo']) ? $descripcionCargo = $_REQUEST['descripcionCargo'] : $descripcionCargo = "";
+isset($_REQUEST['nombre']) ? $nombre = $_REQUEST['nombreCargo'] : $nombre = "";
+isset($_REQUEST['intensidad']) ? $intensisad = $_REQUEST['intensidad'] : $intensidad = "";
+isset($_REQUEST['salario']) ? $salario = $_REQUEST['salario'] : $salario = "";
+isset($_REQUEST['descripcion']) ? $descripcion = $_REQUEST['descripcion'] : $descripcion = "";
 isset($_REQUEST['type']) ? $accion = $_REQUEST['type'] : $accion = "";
 
-$estudiante = new Cargo($nombreCargo, $intensidadHoraria, $salario, $descripcion);
+$estudiante = new Cargo($nombre, $intensidad, $salario, $descripcion);
 $dao = new CargoDAODAO();
 
 switch ($accion) {

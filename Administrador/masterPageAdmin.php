@@ -15,7 +15,7 @@
         <!--[if IE]>
             <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
             <![endif]-->
-        <title>Banco Intercontinental del Oro lll</title>
+        <title>Banco Intercontinental del Oro </title>
         <!--GOOGLE FONT -->
         <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
         <!--BOOTSTRAP MAIN STYLES -->
