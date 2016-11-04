@@ -24,9 +24,9 @@ class sucursalDAO {
 
     public function guardar(Sucursal $obj) {
 
-        $sql = "insert into sucursales(id_sucursal,nombre,descripcion,id_municipio,id_banco) values('" .
-                $obj->getId_sucurusal() . "','" . $obj->getNombre() . "','" . $obj->getDescripcion(). 
-                $obj->getId_municipio() . "','" .   $obj->getId_banco() . "','" . ");";
+        $sql = "insert into sucursales(idsucursal, nombre, descripcion, municipio, banco) values('" .
+                $obj->getIdsucurusal() . "','" . $obj->getNombre() . "','" . $obj->getDescripcion(). 
+                $obj->getIdmunicipio() . "','" .   $obj->getId_banco() . "','" . ");";
 
         $resultado = $this->object->ejecutar($sql);
         $this->object->respuesta($resultado, 'sucursales');
