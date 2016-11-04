@@ -37,130 +37,135 @@
                     <div class="col-md-10 col-md-offset-1 col-sm-12">
                         <h3><strong id="st"> BIENVENIDO ADMINISTRADOR <br> JUNTA DIRECTIVA </br></strong></h3>          
 
-                           
+
                     </div>
                 </div>
                 <div class="contenido">
-            <div class="top">
-                <h1 id="title" class="hidden"><span id="logo">Banco <span>INTERCONTINENTAL</span> del ORO</span></h1>
-            </div>
-            <div class="login-box animated fadeInUp">
-                <div class="box-header">
-                    <h4>Directivos</h4>
-                </div>
-               <form name="formularioDirectivo" method="post" id="formDirectivo" action="Controlador/GestionDirectivo.php">
-                    
-                   <label for="nombreDirectivo">Nombre</label>
-                   <br/>
-                   <input type="text" id="txtNombreDirectivo" name="nombreDirectivo" 
-                        value="<?php isset($_REQUEST['nombreDirectivo']) ?
-                                     print $_REQUEST['nombreDirectivo'] : print"";
-                        ?>">
-                   <div class="oculto">
-                   <div rowspan="10" class="listado">
-                        <?php
-                        if (isset($_REQUEST['info_list'])) {
-                            echo $_REQUEST['info_list'];
-                        }
-                        ?>
-                   </div>
-                   </div>
-                           
-                 <br/>
-                 <label for="apellidoDirectivo">Apellido</label>
-                 <br/>
-                 <input type="text" id="txtApellidoDirectivo" name="apellidoDirectivo" 
-                        value="<?php isset($_REQUEST['apellidoDirectivo']) ?
-                                     print $_REQUEST['apellidoDirectivo'] : print"";
-                        ?>">
-                   <div class="oculto">
-                   <div rowspan="10" class="listado">
-                        <?php
-                        if (isset($_REQUEST['info_list'])) {
-                            echo $_REQUEST['info_list'];
-                        }
-                        ?>
-                   </div>
-                   </div>
-                   
-                <br/>
-                <label for="cedula">Cedula</label>
-                <br/>
-                <input type="text" id="txtCedulaDirectivo" name="cedulaDirectivo" 
-                        value="<?php isset($_REQUEST['cedulaDirectivo']) ?
-                                     print $_REQUEST['cedulaDirectivo'] : print"";
-                        ?>">
-                    
-                   <div class="oculto">
-                   <div rowspan="10" class="listado">
-                        <?php
-                        if (isset($_REQUEST['info_list'])) {
-                            echo $_REQUEST['info_list'];
-                        }
-                        ?>
-                   </div>
-                   </div>
-                <br/>
-                 <label for="telefono">Telefono</label>
-                <br/>
-                <input type="text" id="txtTelefonoDirectivo" name="telefonoDirectivo" 
-                        value="<?php isset($_REQUEST['telefonoDirectivo']) ?
-                                     print $_REQUEST['telefonoDirectivo'] : print"";
-                        ?>">
-                    
-                    <div class="oculto">
-                   <div rowspan="10" class="listado">
-                        <?php
-                        if (isset($_REQUEST['info_list'])) {
-                            echo $_REQUEST['info_list'];
-                        }
-                        ?>
-                   </div>
-                   </div>
-                <br/>
-                <label for="fechaNacimiento">Fecha de Nacimiento</label>
-                <br/>
-                <input type="text" id="txtFechaDeNacimiento" name="fechaDeNacimiento" 
-                        value="<?php isset($_REQUEST['fechaDeNacimiento']) ?
-                                     print $_REQUEST['fechaDeNacimiento'] : print"";
-                        ?>">
-                <div class="oculto">
-                   <div rowspan="10" class="listado">
-                        <?php
-                        if (isset($_REQUEST['info_list'])) {
-                            echo $_REQUEST['info_list'];
-                        }
-                        ?>
-                   </div>
-                   </div>
-                <br/>
-                 <input type="text" id="txtType" name="type" class="oculto">
-                <br/>
-                <input type="button" value="Guardar" id="btnGuardar" onclick="validarDirectivo('save');">
-                <input type="button" value="Buscar" id="btnBuscar" onclick="validarDirectivo('search');">
-                <br/>
-                <input type="button" value="Editar" id="btnEditar" onclick="validarDirectivo('update');">
-                <input type="button" value="Eliminar" id="btnEliminar" onclick="validarDirectivo('delete');">
-                <br/>
-                <input type="button" value="Listar" id="btnListar" onclick="validarDirectivo('list');">
-                <br/>
-                </form>
-                
-        <?php
-        if (isset($_REQUEST['message'])) {
-            echo $_REQUEST['message'];
-                    }
-                    ?>
+                    <div class="top">
+                        <h1 id="title" class="hidden"><span id="logo">Banco <span>INTERCONTINENTAL</span> del ORO</span></h1>
+                    </div>
+                    <div class="login-box animated fadeInUp">
+                        <div class="box-header">
+                            <h4>Directivos</h4>
+                        </div>
+                        <form name="formularioDirectivo" method="post" id="formDirectivo" action="Controlador/GestionDirectivo.php">
 
-                <br/>
-            </div>
-        </div>
+                            <label for="nombreDirectivo">Nombre</label>
+                            <br/>
+                            <input type="text" id="txtNombreDirectivo" name="nombreDirectivo" 
+                                   value="<?php
+                                   isset($_REQUEST['nombreDirectivo']) ?
+                                                   print $_REQUEST['nombreDirectivo'] : print"";
+                                   ?>">
+                            <div class="oculto">
+                                <div rowspan="10" class="listado">
+                                    <?php
+                                    if (isset($_REQUEST['info_list'])) {
+                                        echo $_REQUEST['info_list'];
+                                    }
+                                    ?>
+                                </div>
+                            </div>
+
+                            <br/>
+                            <label for="apellidoDirectivo">Apellido</label>
+                            <br/>
+                            <input type="text" id="txtApellidoDirectivo" name="apellidoDirectivo" 
+                                   value="<?php
+                                   isset($_REQUEST['apellidoDirectivo']) ?
+                                                   print $_REQUEST['apellidoDirectivo'] : print"";
+                                   ?>">
+                            <div class="oculto">
+                                <div rowspan="10" class="listado">
+                                    <?php
+                                    if (isset($_REQUEST['info_list'])) {
+                                        echo $_REQUEST['info_list'];
+                                    }
+                                    ?>
+                                </div>
+                            </div>
+
+                            <br/>
+                            <label for="cedula">Cedula</label>
+                            <br/>
+                            <input type="text" id="txtCedulaDirectivo" name="cedulaDirectivo" 
+                                   value="<?php
+                                    isset($_REQUEST['cedulaDirectivo']) ?
+                                                    print $_REQUEST['cedulaDirectivo'] : print"";
+                                    ?>">
+
+                            <div class="oculto">
+                                <div rowspan="10" class="listado">
+                                    <?php
+                                    if (isset($_REQUEST['info_list'])) {
+                                        echo $_REQUEST['info_list'];
+                                    }
+                                    ?>
+                                </div>
+                            </div>
+                            <br/>
+                            <label for="telefono">Telefono</label>
+                            <br/>
+                            <input type="text" id="txtTelefonoDirectivo" name="telefonoDirectivo" 
+                                   value="<?php
+                                    isset($_REQUEST['telefonoDirectivo']) ?
+                                                    print $_REQUEST['telefonoDirectivo'] : print"";
+                                    ?>">
+
+                            <div class="oculto">
+                                <div rowspan="10" class="listado">
+                                    <?php
+                                    if (isset($_REQUEST['info_list'])) {
+                                        echo $_REQUEST['info_list'];
+                                    }
+                                    ?>
+                                </div>
+                            </div>
+                            <br/>
+                            <label for="fechaNacimiento">Fecha de Nacimiento</label>
+                            <br/>
+                            <input type="text" id="txtFechaDeNacimiento" name="fechaDeNacimiento" 
+                                   value="<?php
+                                    isset($_REQUEST['fechaDeNacimiento']) ?
+                                                    print $_REQUEST['fechaDeNacimiento'] : print"";
+                                    ?>">
+                            <div class="oculto">
+                                <div rowspan="10" class="listado">
+<?php
+if (isset($_REQUEST['info_list'])) {
+    echo $_REQUEST['info_list'];
+}
+?>
+                                </div>
+                            </div>
+                            <br/>
+                            <input type="text" id="txtType" name="type" class="oculto">
+                            <br/>
+                            <input type="button" value="Guardar" id="btnGuardar" onclick="validarDirectivo('save');">
+                            <input type="button" value="Buscar" id="btnBuscar" onclick="validarDirectivo('search');">
+                            <br/>
+                            <input type="button" value="Editar" id="btnEditar" onclick="validarDirectivo('update');">
+                            <input type="button" value="Eliminar" id="btnEliminar" onclick="validarDirectivo('delete');">
+                            <br/>
+                            <input type="button" value="Listar" id="btnListar" onclick="validarDirectivo('list');">
+                            <br/>
+                        </form>
+
+<?php
+if (isset($_REQUEST['message'])) {
+    echo $_REQUEST['message'];
+}
+?>
+
+                        <br/>
+                    </div>
+                </div>
 
 
             </div>
 
         </div> 
-      
+
         <!--END BASIC INFO SECTION -->
         <!--FOOTER SECTION -->
         <div id="footer">
@@ -173,7 +178,7 @@
             </div>
 
         </div>  
-       
+
         <script src="jquery.js"></script>
         <!-- CORE BOOTSTRAP LIBRARY -->
         <script src="bootstrap.min.js"></script>
