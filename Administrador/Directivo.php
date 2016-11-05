@@ -90,9 +90,9 @@
                             <br/>
                             <input type="text" id="txtCedulaDirectivo" name="cedulaDirectivo" 
                                    value="<?php
-                                    isset($_REQUEST['cedulaDirectivo']) ?
-                                                    print $_REQUEST['cedulaDirectivo'] : print"";
-                                    ?>">
+                                   isset($_REQUEST['cedulaDirectivo']) ?
+                                                   print $_REQUEST['cedulaDirectivo'] : print"";
+                                   ?>">
 
                             <div class="oculto">
                                 <div rowspan="10" class="listado">
@@ -108,9 +108,9 @@
                             <br/>
                             <input type="text" id="txtTelefonoDirectivo" name="telefonoDirectivo" 
                                    value="<?php
-                                    isset($_REQUEST['telefonoDirectivo']) ?
-                                                    print $_REQUEST['telefonoDirectivo'] : print"";
-                                    ?>">
+                                   isset($_REQUEST['telefonoDirectivo']) ?
+                                                   print $_REQUEST['telefonoDirectivo'] : print"";
+                                   ?>">
 
                             <div class="oculto">
                                 <div rowspan="10" class="listado">
@@ -126,16 +126,16 @@
                             <br/>
                             <input type="text" id="txtFechaDeNacimiento" name="fechaDeNacimiento" 
                                    value="<?php
-                                    isset($_REQUEST['fechaDeNacimiento']) ?
-                                                    print $_REQUEST['fechaDeNacimiento'] : print"";
-                                    ?>">
+                                   isset($_REQUEST['fechaDeNacimiento']) ?
+                                                   print $_REQUEST['fechaDeNacimiento'] : print"";
+                                   ?>">
                             <div class="oculto">
                                 <div rowspan="10" class="listado">
-<?php
-if (isset($_REQUEST['info_list'])) {
-    echo $_REQUEST['info_list'];
-}
-?>
+                                    <?php
+                                    if (isset($_REQUEST['info_list'])) {
+                                        echo $_REQUEST['info_list'];
+                                    }
+                                    ?>
                                 </div>
                             </div>
                             <br/>
@@ -151,11 +151,11 @@ if (isset($_REQUEST['info_list'])) {
                             <br/>
                         </form>
 
-<?php
-if (isset($_REQUEST['message'])) {
-    echo $_REQUEST['message'];
-}
-?>
+                        <?php
+                        if (isset($_REQUEST['message'])) {
+                            echo $_REQUEST['message'];
+                        }
+                        ?>
 
                         <br/>
                     </div>
