@@ -3,11 +3,11 @@
 require '../Modelo/PaisM.php';
 require '../DAO/PaisDAO.php';
 
-isset($_REQUEST['nombrePais']) ? $nombrePais = $_REQUEST['nombrePais'] : $nombrePais = "";
-isset($_REQUEST['descripcionPais']) ? $descripcionPais = $_REQUEST['descripcionPais'] : $descripcionPais = "";
+isset($_REQUEST['txtNombre']) ? $nombre = $_REQUEST['txtNombre'] : $nombre = "";
+isset($_REQUEST['txtDescripcion']) ? $descripcion = $_REQUEST['txtDescripcion'] : $descripcion = "";
 isset($_REQUEST['type']) ? $accion = $_REQUEST['type'] : $accion = "";
 
-$pais = new PaisM($nombrePais, $descripcionPais);
+$pais = new Pais($nombre, $descripcion);
 $dao = new PaisDAO();
 
 switch ($accion) {
