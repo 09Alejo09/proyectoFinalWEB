@@ -2,13 +2,12 @@
 
 function validarRegistro(tipo) {
 
-    var formulario = document.getElementById("formRegistro");
+    var formulario = document.getElementById("formCargo");
     document.getElementById("txtType").value = tipo;
 
     if (tipo === "save") {
-        if (    document.getElementById("idcargo").value !== "" &&
-                document.getElementById("cargo").value !== "" &&
-                document.getElementById("intensidadHoraria").value !== "" &&
+        if (    document.getElementById("txtNombreCargo").value !== "" &&
+                document.getElementById("txtIntensidadCargo").value !== "" &&
                 document.getElementById("salario").value !== "" &&
                 document.getElementById("descripcion").value !== "") {
             formulario.submit();
