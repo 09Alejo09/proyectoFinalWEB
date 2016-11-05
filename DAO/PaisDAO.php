@@ -9,7 +9,7 @@
 /**
  * Description of PaisDAO
  *
- * @author alejandro Ortega
+ * @author Mariana
  */
 class PaisDAO {
 
@@ -53,20 +53,20 @@ class PaisDAO {
         }
     }
 
-    public function modificar(PaisM $obj) {
-        $sql = "update pais set nombre='" . $obj->getNombrePais() . "'" .
+    public function modificar(Pais $obj) {
+        $sql = "update pais set nombre='" . $obj->getNombre() . "'" .
                 ",descripcion='" . $obj->getDescripcionPais() . " where nombre='" . $obj->getNombrePais();
         $resultado = $this->object->ejecutar($sql);
         $this->object->respuesta($resultado, 'Pais');
     }
 
-    public function eliminar(PaisM $obj) {
+    public function eliminar(Pais $obj) {
         $sql = "delete from pais where nombre=" . $obj->getNombrePais();
         $resultado = $this->object->ejecutar($sql);
         $this->object->respuesta($resultado, 'Pais');
     }
 
-    public function listar(PaisM $obj) {
+    public function listar(Pais $obj) {
         $sql = "select nombre,descripcion from pais";
         $resultado = $this->object->ejecutar($sql);
         $this->construirListado($resultado);
