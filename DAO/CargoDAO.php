@@ -84,7 +84,7 @@ class CargoDAO {
             $cadenaHTML .="<th>nombre</th>";
             $cadenaHTML .="<th>intensidad</th>";
             $cadenaHTML .="<th>Salario</th>";
-            $cadenaHTML .="<th>IntensidadHoraria</th>";
+            $cadenaHTML .="<th>Descripcion</th>";
            
             $cadenaHTML .="</tr>";
 
