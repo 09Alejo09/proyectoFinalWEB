@@ -11,7 +11,7 @@
  *
  * @author Mariana Restrepo
  */
-class sucursalDAO {
+class DepartamentoDAO {
 
     private $con;
     private $object;
@@ -22,19 +22,20 @@ class sucursalDAO {
         $this->con = $this->object->conectar();
     }
 
-    public function guardar(Sucursal $obj) {
+    public function guardar(departamento $obj) {
 
-        $sql = "insert into sucursales(id_sucursal,nombre,descripcion,id_municipio,id_banco) values('" .
-                $obj->getId_sucurusal() . "','" . $obj->getNombre() . "','" . $obj->getDescripcion(). 
-                $obj->getId_municipio() . "','" .   $obj->getId_banco() . "','" . ");";
+        $sql = "insert into sucursales(nombre,descripcion,pais) values('" .
+                $obj->getNombre() . "','" . 
+                $obj->getDescripcion() . "','" .
+                $obj->getPais() . "','" . ");";
 
         $resultado = $this->object->ejecutar($sql);
-        $this->object->respuesta($resultado, 'sucursales');
+        $this->object->respuesta($resultado, 'departamento');
     }
 
-    public function Buscar(Sucursal $obj) {
-        $sql = "SELECT id_sucursal,nombre,descripcion,id_municipio,id_banco from sucursales " . "where id_sucursal='" .
-                $obj->getId_sucursal() . "';";
+    public function Buscar(Departamento $obj) {
+        $sql = "SELECT nombre,descripcion,pais from sucursales " . "where nombre='" .
+                $obj->getNombre() . "';";
         $resultado = $this->object->ejecutar($sql);
         $this->construirBusqueda($resultado);
     }
@@ -43,21 +44,19 @@ class sucursalDAO {
         $vec = pg_fetch_row($resultado);
 
         if (isset($vec) && $vec[0] != "") {
-            $lista = "id_sucursal=" . $vec[0] . "&&";
-            $lista .= "nombre=" . $vec[1] . "&&";
-            $lista .= "descripcion=" . $vec[2]. "&&";  
-            $lista .= "id_municipio=" . $vec[3]. "&&";
-            $lista .="id_banco=" . $vec[4];
+            $lista = "nombre=" . $vec[0] . "&&";
+            $lista .= "descripcion=" . $vec[1] . "&&";
+            $lista .="pais=" . $vec[2];
             
 
-            header('Location:../index.php?page=sucursales&&' . $lista);
+            header('Location:../index.php?page=departamento&&' . $lista);
         } else {
             $mensaje = "No se encontro informacion";
-            header('Location:../index.php?page=sucursales&&message=' . $mensaje);
+            header('Location:../index.php?page=departamento&&message=' . $mensaje);
         }
     }
 
-    public function modificar(Sucursal $obj) {
+    public function modificar(departamento $obj) {
         $sql = "update sucursal set id_sucursal='" . $obj->getId() . "'" .
                 ",nombre='" . $obj->getNombre() . 
                 "',descripcion='" . $obj->getDescripcion() . "'" .
