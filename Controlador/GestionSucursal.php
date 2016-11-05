@@ -1,21 +1,21 @@
 <?php
 
-require '../Modelo/Estudiante.php';
-require '../DAO/estudianteDAO.php';
+require '../Modelo/Sucursal.php';
+require '../DAO/SucursalDAO.php';
 
-isset($_REQUEST['id_sucursal']) ? $id_sucursal = $_REQUEST['id_sucursal'] : $id_sucursal = "";
+isset($_REQUEST['idsucursal']) ? $idsucursal = $_REQUEST['idsucursal'] : $idsucursal = "";
 isset($_REQUEST['nombre']) ? $nombre = $_REQUEST['nombre'] : $nombre = "";
 isset($_REQUEST['descripcion']) ? $descripcion = $_REQUEST['descripcion'] : $descripcion = "";
-isset($_REQUEST['id_municipio']) ? $id_municipio = $_REQUEST['id_municipio'] : $id_municipio = "";
-isset($_REQUEST['id_banco']) ? $id_banco = $_REQUEST['id_banco'] : $id_banco = "";
-isset($_REQUEST['type']) ? $accion = $_REQUEST['type'] : $accion = "";
+isset($_REQUEST['municipio']) ? $municipio = $_REQUEST['municipio'] : $municipio = "";
+isset($_REQUEST['banco']) ? $id_banco = $_REQUEST['banco'] : $banco = "";
 
-$sucursal = new Sucursal($id,$nombre,$descripcion);
+
+$sucursal = new Sucursal($idsucursal, $nombre, $descripcion, $municipio, $banco);
 $dao = new sucursalDAO();
 
 switch ($accion) {
     case "save":
-        $dao->guardar(sucursal);
+        $dao->guardar($sucursal);
         break;
     case "list":
         $dao->listar($sucursal);
@@ -28,7 +28,7 @@ switch ($accion) {
     case "update":
         $dao->modificar($sucursal);
         break;
-    
+
     case "delete":
         $dao->eliminar($sucursal);
         break;

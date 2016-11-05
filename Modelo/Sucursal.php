@@ -13,43 +13,42 @@
  */
 class Sucursal {
 
-    private $id_sucursal;
+    private $idsucursal;
     private $nombre;
     private $descripcion;
-    private $id_municipio;
-    private $id_banco;
-   
-    
-    
-    function Sucursal($id_sucursal,$nombre, $descripcion,$id_municipio,$id_banco) {
-        $this->id_sucursal = $id;
-        $this->nombre = $nombre;
-         $this->descripcion = $descripcion;
-         $this->id_municipio=$id_municipio;
-         $this->id_banco=$id_banco;
+    private $municipio;
+    private $banco;
 
+    function __construct($idsucursal, $nombre, $descripcion, $municipio, $banco) {
+        $this->idsucursal = $idsucursal;
+        $this->nombre = $nombre;
+        $this->descripcion = $descripcion;
+        $this->municipio = $municipio;
+        $this->banco = $banco;
     }
 
-    function getId() {
-        return $this->id_sucursal;
+    function getIdsucursal() {
+        return $this->idsucursal;
     }
 
     function getNombre() {
         return $this->nombre;
     }
 
-    function getDescricpion() {
+    function getDescripcion() {
         return $this->descripcion;
     }
-     function getId_municipio() {
-        return $this->id_sucursal;
-    }
-     function getId_banco() {
-        return $this->id_banco;
+
+    function getMunicipio() {
+        return $this->municipio;
     }
 
-    function setId($id) {
-        $this->id_sucursal= $id_sucursal;
+    function getBanco() {
+        return $this->banco;
+    }
+
+    function setIdsucursal($idsucursal) {
+        $this->idsucursal = $idsucursal;
     }
 
     function setNombre($nombre) {
@@ -57,14 +56,15 @@ class Sucursal {
     }
 
     function setDescripcion($descripcion) {
-        $this->apellido = $descripcion;
-    }
-      function setId_municipio() {
-        $this->id_municipio=$id_municipio;
-    }
-     function setId_banco() {
-         $this->id_banco=$id_banco;
+        $this->descripcion = $descripcion;
     }
 
+    function setMunicipio($municipio) {
+        $this->municipio = $municipio;
+    }
+
+    function setBanco($banco) {
+        $this->banco = $banco;
+    }
 
 }
