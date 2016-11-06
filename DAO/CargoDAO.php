@@ -24,7 +24,7 @@ class CargoDAO {
 
     public function guardar(Cargo $obj) {
 
-        $sql = "insert into cargo(nombre,intensidad,salario,descripcion) values('" .
+        $sql = "insert into cargo(nombre, intensidad, salario, descripcion) values('" .
                 $obj->getNombre() . "','" . $obj->getIntensidad() . "'," .$obj->getsalario() . ",'" . $obj->getDescripcion() . ");";
         echo $sql;
         $resultado = $this->object->ejecutar($sql);
@@ -32,7 +32,7 @@ class CargoDAO {
     }
 
     public function Buscar(Cargo $obj) {
-        $sql = "SELECT nombre,intensidad,salario,descripcion from cargo where nombre='" .
+        $sql = "SELECT nombre, intensidad, salario, descripcion from cargo where nombre='" .
                 $obj->getNombre() . "';";
         $resultado = $this->object->ejecutar($sql);
         $this->construirBusqueda($resultado);
@@ -47,7 +47,7 @@ class CargoDAO {
             $lista .= "salario=" . $vec[2]. "&&";
             $lista .= "decripcion=" . $vec[3];
 
-            header('Location:../index.php?page=cargo&&' . $lista);
+            header('Location:../index.php?page=Cargo&&' . $lista);
         } else {
             $mensaje = "No se encontro informacion";
             header('Location:../index.php?page=Cargo&&message=' . $mensaje);
@@ -71,7 +71,7 @@ class CargoDAO {
     }
 
     public function listar(Cargo $obj) {
-        $sql = "select nombre,intensidad,salario,descripcion from cargo";
+        $sql = "select nombre, intensidad, salario, descripcion from cargo";
         $resultado = $this->object->ejecutar($sql);
         $this->construirListado($resultado);
     }
@@ -83,8 +83,8 @@ class CargoDAO {
             $cadenaHTML .="<tr>";
             $cadenaHTML .="<th>nombre</th>";
             $cadenaHTML .="<th>intensidad</th>";
-            $cadenaHTML .="<th>Salario</th>";
-            $cadenaHTML .="<th>Descripcion</th>";
+            $cadenaHTML .="<th>salario</th>";
+            $cadenaHTML .="<th>descripcion</th>";
            
             $cadenaHTML .="</tr>";
 
@@ -104,7 +104,7 @@ class CargoDAO {
         } else {
             $cadenaHTML .= "<b>No hay registros en la base de datos</b>";
         }
-        header('Location:../index.php?page=cargo&&info_list=' . $cadenaHTML);
+        header('Location:../index.php?page=Cargo&&info_list=' . $cadenaHTML);
     }
 
 }
