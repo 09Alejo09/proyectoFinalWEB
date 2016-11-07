@@ -24,9 +24,9 @@ class DirectivoDAO {
 
     public function guardar(Directivo $obj) {
 
-        $sql = "insert into JuntaDirectiva (nombre,apellido,cedula,telefono,fechadenacimiento,id_municipio ) values('" .
+        $sql = "insert into JuntaDirectiva (nombre,apellido,cedula,telefono,fechadenacimiento,municipio ) values('" .
                 $obj->getNombre() . "','" . $obj->getApellido() . "','" . $obj->getCedula() . "','" . $obj->getTelefono() . "'," .
-                $obj->getFechaDeNacimiento() . "," . $obj->getIdMunicipio() . ");";
+                $obj->getFechaDeNacimiento() . "," . $obj->getMunicipio() . ");";
 
         $resultado = $this->object->ejecutar($sql);
         $this->object->respuesta($resultado, 'Directivo');
