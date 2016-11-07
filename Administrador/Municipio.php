@@ -108,13 +108,13 @@
                             <br/>
                             <input type="text" id="txtType" name="type" class="oculto">
                             <br/>
-                            <input type="button" value="Guardar" id="btnGuardar" onclick="validarDirectivo('save');">
-                            <input type="button" value="Buscar" id="btnBuscar" onclick="validarDirectivo('search');">
+                            <input type="button" value="Guardar" id="btnGuardar" onclick="validarMunicipio('save');">
+                            <input type="button" value="Buscar" id="btnBuscar" onclick="validarMunicipio('search');">
                             <br/>
-                            <input type="button" value="Editar" id="btnEditar" onclick="validarDirectivo('update');">
-                            <input type="button" value="Eliminar" id="btnEliminar" onclick="validarDirectivo('delete');">
+                            <input type="button" value="Editar" id="btnEditar" onclick="validarMunicipio('update');">
+                            <input type="button" value="Eliminar" id="btnEliminar" onclick="validarMunicipio('delete');">
                             <br/>
-                            <input type="button" value="Listar" id="btnListar" onclick="validarDirectivo('list');">
+                            <input type="button" value="Listar" id="btnListar" onclick="validarMunicipio('list');">
                             <br/>
                         </form>
 
