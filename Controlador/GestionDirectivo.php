@@ -3,15 +3,15 @@
 require '../Modelo/Directivo.php';
 require '../DAO/DirectivoDAO.php';
 
-isset($_REQUEST['nombreDirectivo']) ? $nombreDirectivo = $_REQUEST['nombreDirectivo'] : $nombreDirectivo = "";
-isset($_REQUEST['apellidoDirectivo']) ? $apellidoDirectivo = $_REQUEST['apellidoDirectivo'] : $apellidoDirectivo = "";
-isset($_REQUEST['cedulaDirectivo']) ? $cedulaDirectivo = $_REQUEST['cedulaDirectivo'] : $cedulaDirectivo = "";
-isset($_REQUEST['telefonoDirectivo']) ? $telefonoDirectivo = $_REQUEST['telefonoDirectivo'] : $telefonoDirectivo = "";
-isset($_REQUEST['fechaDeNacimiento']) ? $fechaDeNacimiento = $_REQUEST['fechaDeNacimiento'] : $fechaDeNacimiento = "";
-isset($_REQUEST['idMunicipio']) ? $idMunicipio = $_REQUEST['idMunicipio'] : $idMunicipio = "";
+isset($_REQUEST['txtNombreDirectivo']) ? $nombreDirectivo = $_REQUEST['txtNombreDirectivo'] : $nombreDirectivo = "";
+isset($_REQUEST['txtApellidoDirectivo']) ? $apellidoDirectivo = $_REQUEST['txtApellidoDirectivo'] : $apellidoDirectivo = "";
+isset($_REQUEST['txtCedulaDirectivo']) ? $cedulaDirectivo = $_REQUEST['txtCedulaDirectivo'] : $cedulaDirectivo = "";
+isset($_REQUEST['txtTelefonoDirectivo']) ? $telefonoDirectivo = $_REQUEST['txtTelefonoDirectivo'] : $telefonoDirectivo = "";
+isset($_REQUEST['txtFechaDeNacimiento']) ? $fechaDeNacimiento = $_REQUEST['txtFechaDeNacimiento'] : $fechaDeNacimiento = "";
+isset($_REQUEST['txtMunicipio']) ? $municipio = $_REQUEST['txtMunicipio'] : $municipio = "";
 isset($_REQUEST['type']) ? $accion = $_REQUEST['type'] : $accion = "";
 
-$directivo = new Directivo($nombreDirectivo, $apellidoDirectivo, $cedulaDirectivo, $telefonoDirectivo, $fechaDeNacimiento, $idMunicipio);
+$directivo = new Directivo($nombreDirectivo, $apellidoDirectivo, $cedulaDirectivo, $telefonoDirectivo, $fechaDeNacimiento, $municipio);
 $dao = new DirectivoDAO();
 
 switch ($accion) {

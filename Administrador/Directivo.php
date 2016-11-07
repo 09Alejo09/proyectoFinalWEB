@@ -139,6 +139,23 @@
                                 </div>
                             </div>
                             <br/>
+                               <label for="municipio">Municipio</label>
+                            <br/>
+                            <input type="text" id="txtMunicipio" name="municipio" 
+                                   value="<?php
+                                   isset($_REQUEST['municipio']) ?
+                                                   print $_REQUEST['municipio'] : print"";
+                                   ?>">
+                            <div class="oculto">
+                                <div rowspan="10" class="listado">
+                                    <?php
+                                    if (isset($_REQUEST['info_list'])) {
+                                        echo $_REQUEST['info_list'];
+                                    }
+                                    ?>
+                                </div>
+                            </div>
+                            <br/>
                             <input type="text" id="txtType" name="type" class="oculto">
                             <br/>
                             <input type="button" value="Guardar" id="btnGuardar" onclick="validarDirectivo('save');">
