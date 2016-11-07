@@ -57,7 +57,7 @@ class DepartamentoDAO {
     }
 
     public function modificar(departamento $obj) {
-        $sql = "update sucursal set id_sucursal='" . $obj->getId() . "'" .
+        $sql = "update sucursal set nombre='" . $obj->getNombre() . "'" .
                 ",nombre='" . $obj->getNombre() . 
                 "',descripcion='" . $obj->getDescripcion() . "'" .
                 ",pais='" . $obj->getPais()  . 
