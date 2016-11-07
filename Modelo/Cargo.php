@@ -19,7 +19,7 @@ class Cargo {
     private $descripcion;
     
     function __construct($nombre, $intensidad, $salario, $descripcion) {
-        $this->nombre = $nombreCargo;
+        $this->nombre = $nombre;
         $this->intensidad = $intensidad;
         $this->salario = $salario;
         $this->descripcion = $descripcion;

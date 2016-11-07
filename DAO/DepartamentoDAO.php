@@ -60,21 +60,21 @@ class DepartamentoDAO {
         $sql = "update sucursal set id_sucursal='" . $obj->getId() . "'" .
                 ",nombre='" . $obj->getNombre() . 
                 "',descripcion='" . $obj->getDescripcion() . "'" .
-                ",id_municipio='" . $obj->getId_municipio()  . "'". 
-                ",id_banco='" . $obj->getId_banco()  . 
-                "where id_sucursal=" . $obj->getId_sucursal();
+                ",pais='" . $obj->getPais()  . 
+               
+                "where nombre=" . $obj->getNombre();
         $resultado = $this->object->ejecutar($sql);
-        $this->object->respuesta($resultado, 'sucursales');
+        $this->object->respuesta($resultado, 'departamento');
     }
 
-    public function eliminar(Sucursal $obj) {
-        $sql = "delete from sucursales where id=" . $obj->getId_sucursal();
+    public function eliminar(Departamento $obj) {
+        $sql = "delete from departamento where nombre=" . $obj->getNombre();
         $resultado = $this->object->ejecutar($sql);
-        $this->object->respuesta($resultado, 'sucursales');
+        $this->object->respuesta($resultado, 'departamento');
     }
 
-    public function listar(Sucursal $obj) {
-        $sql = "select id_sucursal,nombre,descripcion,id_municipio,id_banco from sucursales";
+    public function listar(Departamento $obj) {
+        $sql = "select nombre,descripcion,pais from departamento";
         $resultado = $this->object->ejecutar($sql);
         $this->construirListado($resultado);
     }
@@ -84,12 +84,10 @@ class DepartamentoDAO {
         if ($resultado && pg_num_rows($resultado) > 0) {
             $cadenaHTML = "<table border='1'>";
             $cadenaHTML .="<tr>";
-            $cadenaHTML .="<th>id</th>";
             $cadenaHTML .="<th>Nombre</th>";
             $cadenaHTML .="<th>Descripcion</th>";
-                $cadenaHTML .="<th>id_municipio</th>";
-            $cadenaHTML .="<th>id_banco</th>";
-           
+            $cadenaHTML .="<th>Pais</th>";
+          
             $cadenaHTML .="</tr>";
 
 
@@ -99,8 +97,7 @@ class DepartamentoDAO {
                 $cadenaHTML .= "<td>" . pg_result($resultado, $cont, 0) . "</td>";
                 $cadenaHTML .= "<td>" . pg_result($resultado, $cont, 1) . "</td>";
                 $cadenaHTML .= "<td>" . pg_result($resultado, $cont, 2) . "</td>";
-                $cadenaHTML .= "<td>" . pg_result($resultado, $cont, 3) . "</td>";
-                $cadenaHTML .= "<td>" . pg_result($resultado, $cont, 4) . "</td>";
+         
              
                 $cadenaHTML .="</tr>";
             }
@@ -109,7 +106,7 @@ class DepartamentoDAO {
         } else {
             $cadenaHTML .= "<b>No hay registros en la base de datos</b>";
         }
-        header('Location:../index.php?page=sucursales&&info_list=' . $cadenaHTML);
+        header('Location:../index.php?page=departamento&&info_list=' . $cadenaHTML);
     }
 
 }
