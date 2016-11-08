@@ -24,7 +24,7 @@ class DirectivoDAO {
 
     public function guardar(Directivo $obj) {
 
-        $sql = "insert into JuntaDirectiva (nombre,apellido,cedula,telefono,fechadenacimiento,municipio ) values('" .
+        $sql = "insert into juntadirectiva (nombre, apellido, cedula, telefono, fechadenacimiento, municipio ) values('" .
                 $obj->getNombreDirectivo() . "','" . $obj->getApellidoDirectivo() . "','" . $obj->getCedulaDirectivo() . "','" . $obj->getTelefonoDirectivo() . "'," .
                 $obj->getFechaDeNacimiento() . "," . $obj->getMunicipio() . ");";
 
@@ -40,7 +40,7 @@ class DirectivoDAO {
             $lista .= "apellido=" . $vec[1] . "&&";
             $lista .= "cedula=" . $vec[2] . "&&";
             $lista .= "telefono=" . $vec[3] . "&&";
-            $lista .= "fechadenacimiento=" . $vec[4]."&&";
+            $lista .= "fechadenacimiento=" . $vec[4] . "&&";
             $lista .= "minicipio=" . $vec[5];
 
             header('Location:../index.php?page=Directivo&&' . $lista);
@@ -51,22 +51,22 @@ class DirectivoDAO {
     }
 
     public function modificar(Directivo $obj) {
-        $sql = "update JuntaDirectiva set nombre='" . $obj->getNombreDirectivo() . "'" .
+        $sql = "update juntadirectiva set nombre='" . $obj->getNombreDirectivo() . "'" .
                 ",nombre='" . $obj->getApellidoDirectivo() . "',cedula='" . $obj->getCedulaDirectivo() . "'" .
                 ",telefono='" . $obj->getTelefonoDirectivo() . "',fechadenacimiento='" . $obj->getFechaDeNacimiento() .
-                "',municipio=". $obj->getMunicipio() ." where cedula='" . $obj->getCedulaDirectivo();
+                "',municipio=" . $obj->getMunicipio() . " where cedula='" . $obj->getCedulaDirectivo();
         $resultado = $this->object->ejecutar($sql);
         $this->object->respuesta($resultado, 'Directivo');
     }
 
     public function eliminar(Directivo $obj) {
-        $sql = "delete from JuntaDirectiva where cedula=" . $obj->getCedulaDirectivo();
+        $sql = "delete from juntadirectiva where cedula=" . $obj->getCedulaDirectivo();
         $resultado = $this->object->ejecutar($sql);
         $this->object->respuesta($resultado, 'Directivo');
     }
 
     public function listar(Directivo $obj) {
-        $sql = "select nombre,apellido,cedula,telefono,fechadenacimiento,municipio from JuntaDirectiva";
+        $sql = "select nombre, apellido, cedula, telefono, fechadenacimiento, municipio from juntadirectiva";
         $resultado = $this->object->ejecutar($sql);
         $this->construirListado($resultado);
     }
@@ -81,7 +81,7 @@ class DirectivoDAO {
             $cadenaHTML .="<th>Cedula</th>";
             $cadenaHTML .="<th>telefono</th>";
             $cadenaHTML .="<th>fechadenacimiento</th>";
-             $cadenaHTML .="<th>municipio</th>";
+            $cadenaHTML .="<th>municipio</th>";
             $cadenaHTML .="</tr>";
 
 
@@ -93,15 +93,15 @@ class DirectivoDAO {
                 $cadenaHTML .= "<td>" . pg_result($resultado, $cont, 2) . "</td>";
                 $cadenaHTML .= "<td>" . pg_result($resultado, $cont, 3) . "</td>";
                 $cadenaHTML .= "<td>" . pg_result($resultado, $cont, 4) . "</td>";
-                 $cadenaHTML .= "<td>" . pg_result($resultado, $cont, 5) . "</td>";
+                $cadenaHTML .= "<td>" . pg_result($resultado, $cont, 5) . "</td>";
                 $cadenaHTML .="</tr>";
             }
-            
+
             $cadenaHTML .= "</table>";
-        }else{
+        } else {
             $cadenaHTML .= "<b>No hay registros en la base de datos</b>";
         }
-        header('Location:../index.php?page=Directivo&&info_list='. $cadenaHTML);
+        header('Location:../index.php?page=Directivo&&info_list=' . $cadenaHTML);
     }
 
 }

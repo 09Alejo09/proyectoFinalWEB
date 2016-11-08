@@ -24,8 +24,8 @@ class DepartamentoDAO {
 
     public function guardar(departamento $obj) {
 
-        $sql = "insert into departamento(nombre,descripcion,pais) values('" .
-                $obj->getNombre() . "','" . 
+        $sql = "insert into departamento(nombre, descripcion, pais) values('" .
+                $obj->getNombre() . "','" .
                 $obj->getDescripcion() . "','" .
                 $obj->getPais() . "','" . ");";
 
@@ -34,7 +34,7 @@ class DepartamentoDAO {
     }
 
     public function Buscar(Departamento $obj) {
-        $sql = "SELECT nombre,descripcion,pais from departamento " . "where nombre='" .
+        $sql = "SELECT nombre, descripcion, pais from departamento where nombre='" .
                 $obj->getNombre() . "';";
         $resultado = $this->object->ejecutar($sql);
         $this->construirBusqueda($resultado);
@@ -47,7 +47,7 @@ class DepartamentoDAO {
             $lista = "nombre=" . $vec[0] . "&&";
             $lista .= "descripcion=" . $vec[1] . "&&";
             $lista .="pais=" . $vec[2];
-            
+
 
             header('Location:../index.php?page=departamento&&' . $lista);
         } else {
@@ -58,10 +58,9 @@ class DepartamentoDAO {
 
     public function modificar(departamento $obj) {
         $sql = "update departamento set nombre='" . $obj->getNombre() . "'" .
-                ",nombre='" . $obj->getNombre() . 
+                ",nombre='" . $obj->getNombre() .
                 "',descripcion='" . $obj->getDescripcion() . "'" .
-                ",pais='" . $obj->getPais()  . 
-               
+                ",pais='" . $obj->getPais() .
                 "where nombre=" . $obj->getNombre();
         $resultado = $this->object->ejecutar($sql);
         $this->object->respuesta($resultado, 'departamento');
@@ -87,7 +86,7 @@ class DepartamentoDAO {
             $cadenaHTML .="<th>Nombre</th>";
             $cadenaHTML .="<th>Descripcion</th>";
             $cadenaHTML .="<th>Pais</th>";
-          
+
             $cadenaHTML .="</tr>";
 
 
@@ -97,8 +96,8 @@ class DepartamentoDAO {
                 $cadenaHTML .= "<td>" . pg_result($resultado, $cont, 0) . "</td>";
                 $cadenaHTML .= "<td>" . pg_result($resultado, $cont, 1) . "</td>";
                 $cadenaHTML .= "<td>" . pg_result($resultado, $cont, 2) . "</td>";
-         
-             
+
+
                 $cadenaHTML .="</tr>";
             }
 
