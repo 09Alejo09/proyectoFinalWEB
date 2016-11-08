@@ -14,7 +14,7 @@ function validarPais (tipo) {
                 document.getElementById("txtDescripcionPais").value !== ""){
                 formulario.submit();
         } else {
-            alert("ingrese todos los datos");
+            alert("Ingrese todos los datos");
         }
 
     }
@@ -34,7 +34,7 @@ function validarPais (tipo) {
             formulario.submit();
 
         } else {
-            alert("por favor ingrese el nombre del pais a buscar");
+            alert("Por favor ingrese el nombre del pais a buscar");
         }
     }
 
@@ -42,7 +42,7 @@ function validarPais (tipo) {
         if (document.getElementById("txtNombrePais").value !== "") {
             formulario.submit();
         } else {
-            alert("por favor busque el registro a eliminar");
+            alert("Por favor busque el registro a eliminar");
         }
     }
 

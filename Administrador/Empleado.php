@@ -156,7 +156,7 @@
                                     ?>
                                 </div>
                             </div>
-                            
+
                             <br/>
                             <label for="idsucursal">Id sucursal</label>
                             <br/>
@@ -174,18 +174,18 @@
                                     ?>
                                 </div>
                             </div>
-                            
-                            
+
+
                             <br/>
                             <input type="text" id="txtType" name="type" class="oculto">
                             <br/>
-                            <input type="button" value="Guardar" id="btnGuardar" onclick="validarDirectivo('save');">
-                            <input type="button" value="Buscar" id="btnBuscar" onclick="validarDirectivo('search');">
+                            <input type="button" value="Guardar" id="btnGuardar" onclick="validarEmpleado('save');">
+                            <input type="button" value="Buscar" id="btnBuscar" onclick="validarEmpleado('search');">
                             <br/>
-                            <input type="button" value="Editar" id="btnEditar" onclick="validarDirectivo('update');">
-                            <input type="button" value="Eliminar" id="btnEliminar" onclick="validarDirectivo('delete');">
+                            <input type="button" value="Editar" id="btnEditar" onclick="validarEmpleado('update');">
+                            <input type="button" value="Eliminar" id="btnEliminar" onclick="validarEmpleado('delete');">
                             <br/>
-                            <input type="button" value="Listar" id="btnListar" onclick="validarDirectivo('list');">
+                            <input type="button" value="Listar" id="btnListar" onclick="validarEmpleado('list');">
                             <br/>
                         </form>
 

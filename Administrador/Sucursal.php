@@ -36,7 +36,7 @@
             <div class="container">
                 <div class="row text-center">
                     <div class="col-md-10 col-md-offset-1 col-sm-12">
-                        <h3><strong id="st"> BIENVENIDO ADMINISTRADOR <br> PAIS </br></strong></h3>          
+                        <h3><strong id="st"> BIENVENIDO ADMINISTRADOR <br> SUCURSAL </br></strong></h3>          
 
 
                     </div>
@@ -49,8 +49,26 @@
                         <div class="box-header">
                             <h4>Directivos</h4>
                         </div>
-                        <form name="formularioPais" method="post" id="formPais" action="Controlador/GestionPais.php">
+                        <form name="formularioSucursal" method="post" id="formSucursal" action="Controlador/GestionSucursal.php">
 
+                            <label for="idsucursal">Id sucursal</label>
+                            <br/>
+                            <input type="text" id="txtIdsucursal" name="idsucursal" 
+                                   value="<?php
+                                   isset($_REQUEST['idsucursal']) ?
+                                                   print $_REQUEST['idsucursal'] : print"";
+                                   ?>">
+                            <div class="oculto">
+                                <div rowspan="10" class="listado">
+                                    <?php
+                                    if (isset($_REQUEST['info_list'])) {
+                                        echo $_REQUEST['info_list'];
+                                    }
+                                    ?>
+                                </div>
+                            </div>
+
+                            <br/>
                             <label for="nombre">Nombre</label>
                             <br/>
                             <input type="text" id="txtNombre" name="nombre" 
@@ -67,6 +85,8 @@
                                     ?>
                                 </div>
                             </div>
+
+                            <br/>
 
                             <br/>
                             <label for="descripcion">Descripcion</label>
@@ -87,15 +107,53 @@
                             </div>
 
                             <br/>
+                            <label for="municipio">Municipio</label>
+                            <br/>
+                            <input type="text" id="txtMunicipio" name="municipio" 
+                                   value="<?php
+                                   isset($_REQUEST['municipio']) ?
+                                                   print $_REQUEST['municipio'] : print"";
+                                   ?>">
+                            <div class="oculto">
+                                <div rowspan="10" class="listado">
+                                    <?php
+                                    if (isset($_REQUEST['info_list'])) {
+                                        echo $_REQUEST['info_list'];
+                                    }
+                                    ?>
+                                </div>
+                            </div>
+
+                            <br/>
+                            <label for="banco">Banco</label>
+                            <br/>
+                            <input type="text" id="txtBanco" name="banco" 
+                                   value="<?php
+                                   isset($_REQUEST['banco']) ?
+                                                   print $_REQUEST['banco'] : print"";
+                                   ?>">
+                            <div class="oculto">
+                                <div rowspan="10" class="listado">
+                                    <?php
+                                    if (isset($_REQUEST['info_list'])) {
+                                        echo $_REQUEST['info_list'];
+                                    }
+                                    ?>
+                                </div>
+                            </div>
+
+
+
+                            <br/>
                             <input type="text" id="txtType" name="type" class="oculto">
                             <br/>
-                            <input type="button" value="Guardar" id="btnGuardar" onclick="validarDirectivo('save');">
-                            <input type="button" value="Buscar" id="btnBuscar" onclick="validarDirectivo('search');">
+                            <input type="button" value="Guardar" id="btnGuardar" onclick="validarSucursal('save');">
+                            <input type="button" value="Buscar" id="btnBuscar" onclick="validarSucursal('search');">
                             <br/>
-                            <input type="button" value="Editar" id="btnEditar" onclick="validarDirectivo('update');">
-                            <input type="button" value="Eliminar" id="btnEliminar" onclick="validarDirectivo('delete');">
+                            <input type="button" value="Editar" id="btnEditar" onclick="validarSucursal('update');">
+                            <input type="button" value="Eliminar" id="btnEliminar" onclick="validarSucursal('delete');">
                             <br/>
-                            <input type="button" value="Listar" id="btnListar" onclick="validarDirectivo('list');">
+                            <input type="button" value="Listar" id="btnListar" onclick="validarSucursal('list');">
                             <br/>
                         </form>
 

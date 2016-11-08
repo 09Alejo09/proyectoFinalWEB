@@ -22,10 +22,10 @@
         <link href="Recursos/css/css.css" rel="stylesheet" type="text/css"/>
 
     </head>
-    
+
     <body>  
         <div class="loader"></div>
-        
+
         <div id="header-section">
             <div class="container">
                 <div class="row text-center">
@@ -63,32 +63,13 @@
                             </div>
 
                             <br/>
-                            <label for="intensidad">Intensidad</label>
-                            <br/>
-                            <input type="text" id="txtIntensidad" name="intensidad" 
-                                   value="<?php
-                                   isset($_REQUEST['intensidad']) ?
-                                                   print $_REQUEST['intensidad'] : print"";
-                                   ?>">
-                            <div class="oculto">
-                                <div rowspan="10" class="listado">
-                                    <?php
-                                    if (isset($_REQUEST['info_list'])) {
-                                        echo $_REQUEST['info_list'];
-                                    }
-                                    ?>
-                                </div>
-                            </div>
-
-                            <br/>
-                            <label for="descripcion">Descripcion</label>
+                            <label for="descripcion">Descripción</label>
                             <br/>
                             <input type="text" id="txtDescripcion" name="descripcion" 
                                    value="<?php
                                    isset($_REQUEST['descripcion']) ?
                                                    print $_REQUEST['descripcion'] : print"";
                                    ?>">
-
                             <div class="oculto">
                                 <div rowspan="10" class="listado">
                                     <?php
@@ -98,6 +79,7 @@
                                     ?>
                                 </div>
                             </div>
+
                             <br/>
                             <label for="pais">Pais</label>
                             <br/>
@@ -116,25 +98,18 @@
                                     ?>
                                 </div>
                             </div>
-                            <br/>
-
-                            <?php
-                            if (isset($_REQUEST['info_list'])) {
-                                echo $_REQUEST['info_list'];
-                            }
-                            ?>
                     </div>
                 </div>
                 <br/>
                 <input type="text" id="txtType" name="type" class="oculto">
                 <br/>
-                <input type="button" value="Guardar" id="btnGuardar" onclick="validarDirectivo('save');">
-                <input type="button" value="Buscar" id="btnBuscar" onclick="validarDirectivo('search');">
+                <input type="button" value="Guardar" id="btnGuardar" onclick="validarDepartamento('save');">
+                <input type="button" value="Buscar" id="btnBuscar" onclick="validarDepartamento('search');">
                 <br/>
-                <input type="button" value="Editar" id="btnEditar" onclick="validarDirectivo('update');">
-                <input type="button" value="Eliminar" id="btnEliminar" onclick="validarDirectivo('delete');">
+                <input type="button" value="Editar" id="btnEditar" onclick="validarDepartamento('update');">
+                <input type="button" value="Eliminar" id="btnEliminar" onclick="validarDepartamento('delete');">
                 <br/>
-                <input type="button" value="Listar" id="btnListar" onclick="validarDirectivo('list');">
+                <input type="button" value="Listar" id="btnListar" onclick="validarDepartamento('list');">
                 <br/>
                 </form>
 

@@ -139,7 +139,7 @@
                                 </div>
                             </div>
                             <br/>
-                               <label for="municipio">Municipio</label>
+                            <label for="municipio">Municipio</label>
                             <br/>
                             <input type="text" id="txtMunicipio" name="municipio" 
                                    value="<?php
