@@ -12,14 +12,15 @@
  * @author Alejandro
  */
 class Usuario {
+
     //put your code here    
-    
+
     private $id;
     private $nombre;
     private $nickname;
     private $password;
     private $cargo;
-    
+
     function __construct($id, $nombre, $nickname, $password, $cargo) {
         $this->id = $id;
         $this->nombre = $nombre;
@@ -68,6 +69,4 @@ class Usuario {
         $this->cargo = $cargo;
     }
 
-
-    
 }

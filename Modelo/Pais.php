@@ -11,33 +11,31 @@
  *
  * @author Alejandro Sanchez
  */
-class PaisM {
+class Pais {
+
     //put your code here
-    private $nombrePais;
-    private $descripcionPais;
-    
-    function __construct($nombrePais, $descripcionPais) {
-        $this->nombrePais = $nombrePais;
-        $this->descripcionPais = $descripcionPais;
+    private $nombre;
+    private $descripcion;
+
+    function __construct($nombre, $descripcion) {
+        $this->nombre = $nombre;
+        $this->descripcion = $descripcion;
     }
 
-    function getNombrePais() {
-        return $this->nombrePais;
+    function getNombre() {
+        return $this->nombre;
     }
 
-    function getDescripcionPais() {
-        return $this->descripcionPais;
+    function getDescripcion() {
+        return $this->descripcion;
     }
 
-    function setNombrePais($nombrePais) {
-        $this->nombrePais = $nombrePais;
+    function setNombre($nombre) {
+        $this->nombre = $nombre;
     }
 
-    function setDescripcionPais($descripcionPais) {
-        $this->descripcionPais = $descripcionPais;
+    function setDescripcion($descripcion) {
+        $this->descripcion = $descripcion;
     }
 
-
-    
 }
-

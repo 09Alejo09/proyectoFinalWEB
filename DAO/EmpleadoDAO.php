@@ -26,7 +26,7 @@ class EmpleadoDAO {
 
     public function guardar(Empleado $obj) {
 
-        $sql = "insert into empleados(id_empleado,cedula, nombre, apellido, ,edad, id_cargo, id_sucursal, descripcion) values('" .
+        $sql = "insert into empleados(idempleado, cedula, nombre, apellido, ,edad, idcargo, idsucursal, descripcion) values('" .
                 
                 $obj->getId_sucurusal() . "','" . $obj->getCedula() . "','" . $obj->getNombre() .
                 $obj->getApellido() . "','" . $obj->getEdad() . "','" . $obj->getId_cargo() . "','" .
@@ -37,7 +37,7 @@ class EmpleadoDAO {
     }
 
     public function Buscar(Empleado $obj) {
-        $sql = "SELECT id_empleado,cedula,nombre, apellido, edad,id_cargo, id_cargo, id_sucursal, descripcion from empleados " . "where id_empleado='" .
+        $sql = "SELECT idempleado, cedula, nombre, apellido, edad, idcargo, idsucursal, descripcion from empleados " . "where id_empleado='" .
                 $obj->getId_empleado() . "';";
         $resultado = $this->object->ejecutar($sql);
         $this->construirBusqueda($resultado);
@@ -47,44 +47,44 @@ class EmpleadoDAO {
         $vec = pg_fetch_row($resultado);
 
         if (isset($vec) && $vec[0] != "") {
-            $lista = "id_empleado=" . $vec[0] . "&&";
+            $lista = "idempleado=" . $vec[0] . "&&";
             $lista .= "cedula=" . $vec[1] . "&&";
             $lista .= "nombre=" . $vec[2] . "&&";
             $lista .= "apellido=" . $vec[3] . "&&";
             $lista .= "edad=" . $vec[4] . "&&";
-            $lista .= "id_cargo=" . $vec[5] . "&&";
-            $lista .= "id_sucursal=" . $vec[6] . "&&";
-            $lista .= "descripcion=" . $vec[2] . "&&";
+            $lista .= "idcargo=" . $vec[5] . "&&";
+            $lista .= "idsucursal=" . $vec[6] . "&&";
+            $lista .= "descripcion=" . $vec[7] . "&&";
 
 
-            header('Location:../index.php?page=empleados&&' . $lista);
+            header('Location:../index.php?page=Empleado&&' . $lista);
         } else {
             $mensaje = "No se encontro informacion";
-            header('Location:../index.php?page=empleados&&message=' . $mensaje);
+            header('Location:../index.php?page=Empleado&&message=' . $mensaje);
         }
     }
 
     public function modificar(Empleado $obj) {
-        $sql = "update empleados set id_empleados='" . $obj->getId_empleado() . "'" .
+        $sql = "update empleados set idempleados='" . $obj->getIdempleado() . "'" .
                 ",cedula='" . $obj->getCedula() .
                 ",nombre='" . $obj->getNombre() .
                  ",apellido='" . $obj->getApellido() .
-                "',id_cargo='" . $obj->getId_cargo() . "'" .
-                ",id_sucursal='" . $obj->getId_sucursal() . "'" .
+                "',idcargo='" . $obj->getId_cargo() . "'" .
+                ",idsucursal='" . $obj->getId_sucursal() . "'" .
                 ",descripcion='" . $obj->getDescripcion() .
-                "where id_empleado=" . $obj->getId_empleado();
+                "where idempleado=" . $obj->getIdempleado();
         $resultado = $this->object->ejecutar($sql);
         $this->object->respuesta($resultado, 'sucursales');
     }
 
-    public function eliminar(Sucursal $obj) {
-        $sql = "delete from sucursales where id=" . $obj->getId_sucursal();
+    public function eliminar(Empleado $obj) {
+        $sql = "delete from empleados where id=" . $obj->getIdsucursal();
         $resultado = $this->object->ejecutar($sql);
         $this->object->respuesta($resultado, 'sucursales');
     }
 
-    public function listar(Sucursal $obj) {
-        $sql = "select id_sucursal,nombre,descripcion,id_municipio,id_banco from sucursales";
+    public function listar(Empleado $obj) {
+        $sql = "select idempleado, cedula, nombre, edad, descripcion, cargo, idbanco from sucursales";
         $resultado = $this->object->ejecutar($sql);
         $this->construirListado($resultado);
     }
@@ -119,7 +119,7 @@ class EmpleadoDAO {
         } else {
             $cadenaHTML .= "<b>No hay registros en la base de datos</b>";
         }
-        header('Location:../index.php?page=sucursales&&info_list=' . $cadenaHTML);
+        header('Location:../index.php?page=Empleado&&info_list=' . $cadenaHTML);
     }
 
 }

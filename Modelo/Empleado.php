@@ -16,28 +16,27 @@ class Empleado {
     //put your code here
 
 
-    private $id_empleado;
+    private $idempleado;
     private $cedula;
     private $nombre;
-    private $apellido;
     private $edad;
-    private $id_cargo;
-    private $id_sucursal;
     private $descripcion;
+    private $cargo;
+    private $idsucursal;
 
-    function __construct($id_empleado, $cedula, $nombre, $apellido, $edad, $id_cargo, $id_sucursal, $descripcion) {
-        $this->id = $id_empleado;
+    function __construct($idempleado, $cedula, $nombre, $edad, $descripcion, $cargo, $idsucursal) {
+
+        $this->idempleado = $idempleado;
         $this->cedula = $cedula;
         $this->nombre = $nombre;
-        $this->apellido = $apellido;
         $this->edad = $edad;
-        $this->id_cargo = $id_cargo;
-        $this->id_sucursal = $id_sucursal;
         $this->descripcion = $descripcion;
+        $this->cargo = $cargo;
+        $this->idsucursal = $idsucursal;
     }
 
-    function getId_empleado() {
-        return $this->id_empleado;
+    function getIdempleado() {
+        return $this->idempleado;
     }
 
     function getCedula() {
@@ -48,28 +47,24 @@ class Empleado {
         return $this->nombre;
     }
 
-    function getApellido() {
-        return $this->apellido;
-    }
-
     function getEdad() {
         return $this->edad;
-    }
-
-    function getId_cargo() {
-        return $this->id_cargo;
-    }
-
-    function getId_sucursal() {
-        return $this->id_sucursal;
     }
 
     function getDescripcion() {
         return $this->descripcion;
     }
 
-    function setId_empleado($id_empleado) {
-        $this->id_empleado = $id_empleado;
+    function getCargo() {
+        return $this->cargo;
+    }
+
+    function getIdsucursal() {
+        return $this->idsucursal;
+    }
+
+    function setIdempleado($idempleado) {
+        $this->idempleado = $idempleado;
     }
 
     function setCedula($cedula) {
@@ -80,24 +75,20 @@ class Empleado {
         $this->nombre = $nombre;
     }
 
-    function setApellido($apellido) {
-        $this->apellido = $apellido;
-    }
-
     function setEdad($edad) {
         $this->edad = $edad;
     }
 
-    function setId_cargo($id_cargo) {
-        $this->id_cargo = $id_cargo;
-    }
-
-    function setId_sucursal($id_sucursal) {
-        $this->id_sucursal = $id_sucursal;
-    }
-
     function setDescripcion($descripcion) {
         $this->descripcion = $descripcion;
+    }
+
+    function setCargo($cargo) {
+        $this->cargo = $cargo;
+    }
+
+    function setIdsucursal($idsucursal) {
+        $this->idsucursal = $idsucursal;
     }
 
 }

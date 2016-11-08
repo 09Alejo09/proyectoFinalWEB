@@ -1,20 +1,9 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
-/**
- * Description of Municipio
- *
- * @author Ideapad 300
- */
 class Departamento {
 
-    //put your code here
-
+   
 
     private $nombre;
     private $descripcion;
@@ -23,7 +12,7 @@ class Departamento {
 
     function __construct($nombre, $descripcion, $departamento) {
         $this->nombre= $nombre;
-        $this->descripcion = $cedula;
+        $this->descripcion = $descripcion;
         $this->pais = $departamento;
       
     }

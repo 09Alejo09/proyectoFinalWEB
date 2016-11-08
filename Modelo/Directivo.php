@@ -12,69 +12,70 @@
  * @author Alejandro Sanchez
  */
 class Directivo {
+
     //put your code here
-    private $nombreDirectivo;
-    private $apellidoDirectivo;
-    private $cedulaDirectivo;
-    private $telefonoDirectivo;
-    private $fechaDeNacimiento;
+    private $nombre;
+    private $apellido;
+    private $cedula;
+    private $telefono;
+    private $fechadenacimiento;
     private $municipio;
-    
-    function __construct($nombreDirectivo, $apellidoDirectivo, $cedulaDirectivo, $telefonoDirectivo, $fechaDeNacimiento, $municipio) {
-        $this->nombreDirectivo = $nombreDirectivo;
-        $this->apellidoDirectivo = $apellidoDirectivo;
-        $this->cedulaDirectivo = $cedulaDirectivo;
-        $this->telefonoDirectivo = $telefonoDirectivo;
-        $this->fechaDeNacimiento = $fechaDeNacimiento;
+
+    function __construct($nombre, $apellido, $cedula, $telefono, $fechadenacimiento, $municipio) {
+        $this->nombre = $nombre;
+        $this->apellido = $apellido;
+        $this->cedula = $cedula;
+        $this->telefono = $telefono;
+        $this->fechadenacimiento = $fechadenacimiento;
         $this->municipio = $municipio;
     }
-    function getNombreDirectivo() {
-        return $this->nombreDirectivo;
+
+    function getNombre() {
+        return $this->nombre;
     }
 
-    function getApellidoDirectivo() {
-        return $this->apellidoDirectivo;
+    function getApellido() {
+        return $this->apellido;
     }
 
-    function getCedulaDirectivo() {
-        return $this->cedulaDirectivo;
+    function getCedula() {
+        return $this->cedula;
     }
 
-    function getTelefonoDirectivo() {
-        return $this->telefonoDirectivo;
+    function getTelefono() {
+        return $this->telefono;
     }
 
-    function getFechaDeNacimiento() {
-        return $this->fechaDeNacimiento;
+    function getFechadenacimiento() {
+        return $this->fechadenacimiento;
     }
 
     function getMunicipio() {
         return $this->municipio;
     }
 
-    function setNombreDirectivo($nombreDirectivo) {
-        $this->nombreDirectivo = $nombreDirectivo;
+    function setNombre($nombre) {
+        $this->nombre = $nombre;
     }
 
-    function setApellidoDirectivo($apellidoDirectivo) {
-        $this->apellidoDirectivo = $apellidoDirectivo;
+    function setApellido($apellido) {
+        $this->apellido = $apellido;
     }
 
-    function setCedulaDirectivo($cedulaDirectivo) {
-        $this->cedulaDirectivo = $cedulaDirectivo;
+    function setCedula($cedula) {
+        $this->cedula = $cedula;
     }
 
-    function setTelefonoDirectivo($telefonoDirectivo) {
-        $this->telefonoDirectivo = $telefonoDirectivo;
+    function setTelefono($telefono) {
+        $this->telefono = $telefono;
     }
 
-    function setFechaDeNacimiento($fechaDeNacimiento) {
-        $this->fechaDeNacimiento = $fechaDeNacimiento;
+    function setFechadenacimiento($fechadenacimiento) {
+        $this->fechadenacimiento = $fechadenacimiento;
     }
 
     function setMunicipio($municipio) {
         $this->municipio = $municipio;
     }
-
 
 }

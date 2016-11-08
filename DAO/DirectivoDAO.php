@@ -1,16 +1,5 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- * Description of estudienteDAO
- *
- * @author alejandro Ortega
- */
 class DirectivoDAO {
 
     private $con;
@@ -76,9 +65,9 @@ class DirectivoDAO {
         if ($resultado && pg_num_rows($resultado) > 0) {
             $cadenaHTML = "<table border='1'>";
             $cadenaHTML .="<tr>";
-            $cadenaHTML .="<th>Nombre</th>";
-            $cadenaHTML .="<th>Apellido</th>";
-            $cadenaHTML .="<th>Cedula</th>";
+            $cadenaHTML .="<th>nombre</th>";
+            $cadenaHTML .="<th>apellido</th>";
+            $cadenaHTML .="<th>cedula</th>";
             $cadenaHTML .="<th>telefono</th>";
             $cadenaHTML .="<th>fechadenacimiento</th>";
             $cadenaHTML .="<th>municipio</th>";

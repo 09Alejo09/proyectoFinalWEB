@@ -1,16 +1,5 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- * 
- *
- * @author Mariana Restrepo
- */
 class DepartamentoDAO {
 
     private $con;
@@ -22,7 +11,7 @@ class DepartamentoDAO {
         $this->con = $this->object->conectar();
     }
 
-    public function guardar(departamento $obj) {
+    public function guardar(Departamento $obj) {
 
         $sql = "insert into departamento(nombre, descripcion, pais) values('" .
                 $obj->getNombre() . "','" .
@@ -49,14 +38,14 @@ class DepartamentoDAO {
             $lista .="pais=" . $vec[2];
 
 
-            header('Location:../index.php?page=departamento&&' . $lista);
+            header('Location:../index.php?page=Departamento&&' . $lista);
         } else {
             $mensaje = "No se encontro informacion";
-            header('Location:../index.php?page=departamento&&message=' . $mensaje);
+            header('Location:../index.php?page=Departamento&&message=' . $mensaje);
         }
     }
 
-    public function modificar(departamento $obj) {
+    public function modificar(Departamento $obj) {
         $sql = "update departamento set nombre='" . $obj->getNombre() . "'" .
                 ",nombre='" . $obj->getNombre() .
                 "',descripcion='" . $obj->getDescripcion() . "'" .
@@ -73,7 +62,7 @@ class DepartamentoDAO {
     }
 
     public function listar(Departamento $obj) {
-        $sql = "select nombre,descripcion,pais from departamento";
+        $sql = "select nombre, descripcion, pais from departamento";
         $resultado = $this->object->ejecutar($sql);
         $this->construirListado($resultado);
     }
@@ -83,9 +72,9 @@ class DepartamentoDAO {
         if ($resultado && pg_num_rows($resultado) > 0) {
             $cadenaHTML = "<table border='1'>";
             $cadenaHTML .="<tr>";
-            $cadenaHTML .="<th>Nombre</th>";
-            $cadenaHTML .="<th>Descripcion</th>";
-            $cadenaHTML .="<th>Pais</th>";
+            $cadenaHTML .="<th>nombre</th>";
+            $cadenaHTML .="<th>descripcion</th>";
+            $cadenaHTML .="<th>pais</th>";
 
             $cadenaHTML .="</tr>";
 
@@ -105,7 +94,7 @@ class DepartamentoDAO {
         } else {
             $cadenaHTML .= "<b>No hay registros en la base de datos</b>";
         }
-        header('Location:../index.php?page=departamento&&info_list=' . $cadenaHTML);
+        header('Location:../index.php?page=Departamento&&info_list=' . $cadenaHTML);
     }
 
 }

@@ -25,7 +25,8 @@ class CargoDAO {
     public function guardar(Cargo $obj) {
 
         $sql = "insert into cargo(nombre, intensidad, salario, descripcion) values('" .
-                $obj->getNombre() . "','" . $obj->getIntensidad() . "'," .$obj->getsalario() . ",'" . $obj->getDescripcion() . ");";
+                $obj->getNombre() . "','" . $obj->getIntensidad() . "',"
+                . $obj->getsalario() . ",'" . $obj->getDescripcion() . ");";
         echo $sql;
         $resultado = $this->object->ejecutar($sql);
         $this->object->respuesta($resultado, 'cargo');
@@ -44,7 +45,7 @@ class CargoDAO {
         if (isset($vec) && $vec[0] != "") {
             $lista = "nombre=" . $vec[0] . "&&";
             $lista .= "intensidad=" . $vec[1] . "&&";
-            $lista .= "salario=" . $vec[2]. "&&";
+            $lista .= "salario=" . $vec[2] . "&&";
             $lista .= "decripcion=" . $vec[3];
 
             header('Location:../index.php?page=Cargo&&' . $lista);
@@ -56,9 +57,9 @@ class CargoDAO {
 
     public function modificar(Cargo $obj) {
         $sql = "update cargo set nombre='" . $obj->getNombre() . "'" .
-                ",intensidad='" . $obj->getIntensidad() . 
+                ",intensidad='" . $obj->getIntensidad() .
                 "',salario='" . $obj->getSalario() . "'" .
-                " ,descripcion='" . $obj->getDescripcion()  .
+                " ,descripcion='" . $obj->getDescripcion() .
                 "where nombre=" . $obj->getNombre();
         $resultado = $this->object->ejecutar($sql);
         $this->object->respuesta($resultado, 'cargo');
@@ -85,7 +86,7 @@ class CargoDAO {
             $cadenaHTML .="<th>intensidad</th>";
             $cadenaHTML .="<th>salario</th>";
             $cadenaHTML .="<th>descripcion</th>";
-           
+
             $cadenaHTML .="</tr>";
 
 
@@ -96,7 +97,7 @@ class CargoDAO {
                 $cadenaHTML .= "<td>" . pg_result($resultado, $cont, 1) . "</td>";
                 $cadenaHTML .= "<td>" . pg_result($resultado, $cont, 2) . "</td>";
                 $cadenaHTML .= "<td>" . pg_result($resultado, $cont, 3) . "</td>";
-             
+
                 $cadenaHTML .="</tr>";
             }
 
