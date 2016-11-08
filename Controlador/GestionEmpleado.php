@@ -1,6 +1,6 @@
 <?php
 
-require '../Modelo/Estudiante.php';
+require '../Modelo/Empleado.php';
 require '../DAO/EmpleadoDAO.php';
 
 isset($_REQUEST['id_empleado']) ? $id_empleado = $_REQUEST['id_empleado'] : $id_empleado = "";

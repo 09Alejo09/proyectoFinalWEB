@@ -58,7 +58,7 @@ class CargoDAO {
         $sql = "update cargo set nombre='" . $obj->getNombre() . "'" .
                 ",intensidad='" . $obj->getIntensidad() . 
                 "',salario='" . $obj->getSalario() . "'" .
-                ",intensidadHoraria='" . $obj->getDescripcion()  .
+                ",descripcion='" . $obj->getDescripcion()  .
                 "where nombre=" . $obj->getNombre();
         $resultado = $this->object->ejecutar($sql);
         $this->object->respuesta($resultado, 'cargo');

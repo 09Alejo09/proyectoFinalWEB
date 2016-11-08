@@ -11,30 +11,30 @@
  *
  * @author Mariana Restrepo
  */
-class DepartamentoDAO {
+class MunicipioDAO {
 
     private $con;
     private $object;
 
-    function DepartamentoDAO() {
+    function Municipio() {
         require '../infraestrucutura/clsConexion.php';
         $this->object = new clsConexion();
         $this->con = $this->object->conectar();
     }
 
-    public function guardar(departamento $obj) {
+    public function guardar(Municipio $obj) {
 
-        $sql = "insert into departamento(nombre,descripcion,pais) values('" .
+        $sql = "insert into municipio(nombre,descripcion,departamento) values('" .
                 $obj->getNombre() . "','" . 
                 $obj->getDescripcion() . "','" .
-                $obj->getPais() . "','" . ");";
+                $obj->getDepartamento() . "','" . ");";
 
         $resultado = $this->object->ejecutar($sql);
-        $this->object->respuesta($resultado, 'departamento');
+        $this->object->respuesta($resultado, 'municipio');
     }
 
-    public function Buscar(Departamento $obj) {
-        $sql = "SELECT nombre,descripcion,pais from departamento " . "where nombre='" .
+    public function Buscar(Municipio $obj) {
+        $sql = "SELECT nombre,descripcion, from municipio " . "where nombre='" .
                 $obj->getNombre() . "';";
         $resultado = $this->object->ejecutar($sql);
         $this->construirBusqueda($resultado);
@@ -46,35 +46,35 @@ class DepartamentoDAO {
         if (isset($vec) && $vec[0] != "") {
             $lista = "nombre=" . $vec[0] . "&&";
             $lista .= "descripcion=" . $vec[1] . "&&";
-            $lista .="pais=" . $vec[2];
+            $lista .="departamento=" . $vec[2];
             
 
-            header('Location:../index.php?page=departamento&&' . $lista);
+            header('Location:../index.php?page=municipio&&' . $lista);
         } else {
             $mensaje = "No se encontro informacion";
-            header('Location:../index.php?page=departamento&&message=' . $mensaje);
+            header('Location:../index.php?page=municipio&&message=' . $mensaje);
         }
     }
 
-    public function modificar(departamento $obj) {
-        $sql = "update departamento set nombre='" . $obj->getNombre() . "'" .
+    public function modificar(Municipio $obj) {
+        $sql = "update municipio set nombre='" . $obj->getNombre() . "'" .
                 ",nombre='" . $obj->getNombre() . 
                 "',descripcion='" . $obj->getDescripcion() . "'" .
-                ",pais='" . $obj->getPais()  . 
+                ",departamento='" . $obj->getDepartamento()  . 
                
                 "where nombre=" . $obj->getNombre();
         $resultado = $this->object->ejecutar($sql);
-        $this->object->respuesta($resultado, 'departamento');
+        $this->object->respuesta($resultado, 'municipio');
     }
 
-    public function eliminar(Departamento $obj) {
-        $sql = "delete from departamento where nombre=" . $obj->getNombre();
+    public function eliminar(Municipio $obj) {
+        $sql = "delete from municipio where nombre=" . $obj->getNombre();
         $resultado = $this->object->ejecutar($sql);
-        $this->object->respuesta($resultado, 'departamento');
+        $this->object->respuesta($resultado, 'municipio');
     }
 
-    public function listar(Departamento $obj) {
-        $sql = "select nombre,descripcion,pais from departamento";
+    public function listar(Municipio $obj) {
+        $sql = "select nombre,descripcion,departamento from departamento";
         $resultado = $this->object->ejecutar($sql);
         $this->construirListado($resultado);
     }
@@ -86,7 +86,7 @@ class DepartamentoDAO {
             $cadenaHTML .="<tr>";
             $cadenaHTML .="<th>Nombre</th>";
             $cadenaHTML .="<th>Descripcion</th>";
-            $cadenaHTML .="<th>Pais</th>";
+            $cadenaHTML .="<th>Departamento</th>";
           
             $cadenaHTML .="</tr>";
 
@@ -106,7 +106,7 @@ class DepartamentoDAO {
         } else {
             $cadenaHTML .= "<b>No hay registros en la base de datos</b>";
         }
-        header('Location:../index.php?page=departamento&&info_list=' . $cadenaHTML);
+        header('Location:../index.php?page=municipio&&info_list=' . $cadenaHTML);
     }
 
 }
