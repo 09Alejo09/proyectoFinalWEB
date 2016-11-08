@@ -1,22 +1,56 @@
 
 
-function validarRegistro(tipo) {
+function validarSucursal(tipo) {
 
-    var formulario = document.getElementById("formRegistro");
+    var formulario = document.getElementById("formSucursal");
     document.getElementById("txtType").value = tipo;
 
     if (tipo === "save") {
-        if (document.getElementById("id_sucursal").value !== "" &&
-                document.getElementById("nombre").value !== "" &&
-                document.getElementById("descripcion").value !== "" &&
-                document.getElementById("id_municipio").value !== "" &&
-                document.getElementById("id_banco").value !== "") {
+        if (document.getElementById("txtIdsucursal").value !== "" &&
+                document.getElementById("txtNombre").value !== "" &&
+                document.getElementById("txtDescripcion").value !== "" &&
+                document.getElementById("txtMunicipio").value !== "" &&
+                document.getElementById("txtBanco").value !== "") {
             formulario.submit();
         } else {
-            alert("ingrese todos los datos");
-            
+            alert("Ingrese todos los datos");
         }
 
     }
-    
+
+    if (tipo === "update") {
+        if (document.getElementById("txtIdsucursal").value !== "" &&
+                document.getElementById("txtNombre").value !== "" &&
+                document.getElementById("txtDescripcion").value !== "" &&
+                document.getElementById("txtMunicipio").value !== "" &&
+                document.getElementById("txtBanco").value !== "") {
+            formulario.submit();
+        } else {
+            alert("Por favor realice una busqueda previa o ingrese todos los datos");
+        }
+
+    }
+
+    if (tipo === "search") {
+        if (document.getElementById("txtNombre").value !== "") {
+            formulario.submit();
+
+        } else {
+            alert("Por favor ingrese el nombre de la sucursal a buscar");
+        }
+    }
+
+    if (tipo === "delete") {
+        if (document.getElementById("txtNombre").value !== "") {
+            formulario.submit();
+        } else {
+            alert("Por favor busque el nombre de la sucursal a eliminar");
+        }
+    }
+
+    if (tipo === "list") {
+        formulario.submit();
+    }
 }
+
+

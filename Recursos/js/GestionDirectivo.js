@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-function validarDirectivo (tipo) {
+function validarDirectivo(tipo) {
 
     var formulario = document.getElementById("formDirectivo");
     document.getElementById("txtType").value = tipo;
@@ -19,7 +19,7 @@ function validarDirectivo (tipo) {
                 document.getElementById("txt").value !== "") {
             formulario.submit();
         } else {
-            alert("ingrese todos los datos");
+            alert("Ingrese todos los datos");
         }
 
     }
@@ -33,7 +33,7 @@ function validarDirectivo (tipo) {
                 document.getElementById("txt").value !== "") {
             formulario.submit();
         } else {
-            alert("por favor realice una busqueda previa o ingrese todos los datos");
+            alert("Por favor realice una busqueda previa o ingrese todos los datos");
         }
 
     }
@@ -43,7 +43,7 @@ function validarDirectivo (tipo) {
             formulario.submit();
 
         } else {
-            alert("por favor ingrese la cedula del directivo a buscar");
+            alert("Por favor ingrese la cedula del directivo a buscar");
         }
     }
 
@@ -51,7 +51,7 @@ function validarDirectivo (tipo) {
         if (document.getElementById("txtCedulaDirectivo").value !== "") {
             formulario.submit();
         } else {
-            alert("por favor busque el registro a eliminar");
+            alert("Por favor busque el registro a eliminar");
         }
     }
 

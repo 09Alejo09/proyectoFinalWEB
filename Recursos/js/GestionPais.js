@@ -1,18 +1,14 @@
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
-function validarPais (tipo) {
+
+function validarPais(tipo) {
 
     var formulario = document.getElementById("formPais");
     document.getElementById("txtType").value = tipo;
 
     if (tipo === "save") {
-        if (document.getElementById("txtNombrePais").value !== "" &&
-                document.getElementById("txtDescripcionPais").value !== ""){
-                formulario.submit();
+        if (document.getElementById("txtNombre").value !== "" &&
+                document.getElementById("txtDescripcion").value !== "") {
+            formulario.submit();
         } else {
             alert("Ingrese todos los datos");
         }
@@ -20,17 +16,17 @@ function validarPais (tipo) {
     }
 
     if (tipo === "update") {
-        if (        document.getElementById("txtNombrePais").value !== "" &&
-                    document.getElementById("txtDescripcionPais").value !== ""){
-                    formulario.submit();
+        if (document.getElementById("txtNombre").value !== "" &&
+                document.getElementById("txtDescripcion").value !== "") {
+            formulario.submit();
         } else {
-            alert("por favor realice una busqueda previa o ingrese todos los datos");
+            alert("Por favor realice una busqueda previa o ingrese todos los datos");
         }
 
     }
 
     if (tipo === "search") {
-        if (document.getElementById("txtNombrePais").value !== "") {
+        if (document.getElementById("txtNombre").value !== "") {
             formulario.submit();
 
         } else {
@@ -42,7 +38,7 @@ function validarPais (tipo) {
         if (document.getElementById("txtNombrePais").value !== "") {
             formulario.submit();
         } else {
-            alert("Por favor busque el registro a eliminar");
+            alert("Por favor busque el nombre del pais a eliminar");
         }
     }
 
@@ -50,10 +46,6 @@ function validarPais (tipo) {
         formulario.submit();
     }
 }
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 
 
