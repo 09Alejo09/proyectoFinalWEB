@@ -1,27 +1,31 @@
 create table cargo(
-nombre varchar(15) primary key,
+id_cargo serial primary key,
+nombre varchar(15),
 intensidad varchar(10),
 salario double precision,
 descripcion varchar(150)
 );
 
 create table pais(
-nombre varchar(20) primary key,
+id_pais serial primary key,
+nombre varchar(20),
 descripcion varchar(150)
 );
 
 create table departamento(
-nombre varchar(20) primary key,
+id_departamento serial primary key,
+nombre varchar(20),
 descripcion varchar(150),
-pais varchar(20),
-foreign key(pais) references pais(nombre)
+id_pais int,
+foreign key(id_pais) references pais(id_pais)
 );
 
 create table municipio(
-nombre varchar(20) primary key,
+id_municipio serial primary key,
+nombre varchar(20),
 descripcion varchar(150),
-departamento varchar(20),
-foreign key(departamento) references departamento(nombre)
+id_departamento int,
+foreign key(id_departamento) references departamento(id_departamento)
 );
 
 create table juntadirectiva(
@@ -30,8 +34,8 @@ apellido varchar(20),
 cedula varchar(10) primary key,
 telefono varchar(10),
 fechadenacimiento date,
-municipio varchar(20),
-foreign key(municipio) references municipio(nombre)
+id_municipio int,
+foreign key(id_municipio) references municipio(id_municipio)
 ); 
 
 create table banco(
@@ -43,29 +47,29 @@ direccion varchar(30)
 );
 
 create table sucursal(
-idsucursal serial primary key,
+id_sucursal serial primary key,
 nombre varchar(20),
 descripcion varchar(150),
-municipio varchar(20),
-banco varchar(20),
-foreign key(municipio) references municipio(nombre),
-foreign key(banco) references banco(nombre)
+id_municipio int,
+id_banco int,
+foreign key(id_municipio) references municipio(id_municipio),
+foreign key(id_banco) references banco(id_banco)
 );
 
 create table empleado(
-idempleado serial primary key,
+id_empleado serial primary key,
 cedula varchar(10),
 nombre varchar(20),
 edad varchar(3),
 descripcion varchar(200),
 cargo varchar(15),
-idsucursal integer,
+idsucursal int,
 foreign key(cargo) references cargo(nombre),
-foreign key(idsucursal) references sucursal(idsucursal)
+foreign key(id_sucursal) references sucursal(id_sucursal)
 );
 
 ﻿create table usuario(
-id serial primary key,
+id_usuario serial primary key,
 nombre varchar(50),
 nickname varchar(15),
 password varchar (50),
