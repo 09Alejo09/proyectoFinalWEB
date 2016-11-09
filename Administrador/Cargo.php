@@ -123,9 +123,7 @@
                                 echo $_REQUEST['info_list'];
                             }
                             ?>
-                    </div>
-                </div>
-                <br/>
+                            <br/>
                 <input type="text" id="txtType" name="type" class="oculto">
                 <br/>
                 <input type="button" value="Guardar" id="btnGuardar" onclick="validarCargo('save');">
@@ -136,6 +134,10 @@
                 <br/>
                 <input type="button" value="Listar" id="btnListar" onclick="validarCargo('list');">
                 <br/>
+                    </div>
+                
+                </div>
+                
                 </form>
 
                 <?php
