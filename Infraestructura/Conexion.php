@@ -24,7 +24,7 @@ class Conexion {
 
     public function conectar() {
         $this->usuario = "postgres";
-        $this->password = "admin";
+        $this->password = "ADMIN";
         $this->dataBase = "proyectoFinal";
         $this->puerto = 5432;
         $this->host = "localhost";

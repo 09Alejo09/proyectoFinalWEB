@@ -29,6 +29,7 @@ class LogInDAO {
         $sql = "SELECT nombre,nickname,pass,cargo "
                 . "from usuarios "
                 . "where nickname='" . $obj->getNickName() . "' AND pass='" . md5($obj->getPassword()) . "'";
+        echo $sql;
         $resultado = $this->object->ejecutar($sql);
         return $this->object->validarLogin($resultado);
     }

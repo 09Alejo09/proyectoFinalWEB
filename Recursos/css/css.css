@@ -1,11 +1,11 @@
 body {
-    font-family:'Open Sans', sans-serif;
-    font-weight: 400;
-    font-size: 14px;
-    color:#d4b743;   
-    margin-top: 40px;
-    line-height:16px;
-     background: url(images/ppp.jpg);
+    background-image: url("../images/ppp.jpg") no-repeat center center fixed;
+    background-size: cover;
+    font-size: 16px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    margin: 0;
+    color: #666;
 }
 
 /* Typography */

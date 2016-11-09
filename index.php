@@ -40,7 +40,7 @@ and open the template in the editor.
                 } else if ($cargo === "cajero") {
                     include 'Vista/masterPageCajero.php';
                 } else if ($cargo === "gerente") {
-                    include 'Vista/masterPageGerente.php.php';
+                    include 'Gerente/masterPageGerente.php';
                 } else if ($cargo === "cliente") {
                     include 'Vista/masterPageCliente.php';
                 }

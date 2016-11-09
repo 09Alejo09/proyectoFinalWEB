@@ -18,8 +18,8 @@
         <link href="Recursos/Pluggins/font-awesome.min.css" rel="stylesheet" />
         <!--        <link href="Recursos/css/csslogin.css" rel="stylesheet" type="text/css"/>-->
 
-
-        <link href="Recursos/css/css.css" rel="stylesheet" type="text/css"/>
+        <link href="../Recursos/css/csslogin.css" rel="stylesheet" type="text/css"/>
+        
 
     </head>
     
