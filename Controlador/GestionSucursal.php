@@ -3,14 +3,13 @@
 require '../Modelo/Sucursal.php';
 require '../DAO/SucursalDAO.php';
 
-isset($_REQUEST['idsucursal']) ? $idsucursal = $_REQUEST['idsucursal'] : $idsucursal = "";
-isset($_REQUEST['nombre']) ? $nombre = $_REQUEST['nombre'] : $nombre = "";
-isset($_REQUEST['descripcion']) ? $descripcion = $_REQUEST['descripcion'] : $descripcion = "";
-isset($_REQUEST['municipio']) ? $municipio = $_REQUEST['municipio'] : $municipio = "";
-isset($_REQUEST['banco']) ? $id_banco = $_REQUEST['banco'] : $banco = "";
+isset($_REQUEST['txtId_sucursal']) ? $idsucursal = $_REQUEST['id_sucursal'] : $idsucursal = "";
+isset($_REQUEST['txtNombre']) ? $nombre = $_REQUEST['txtNombre'] : $nombre = "";
+isset($_REQUEST['txtDescripcion']) ? $descripcion = $_REQUEST['txtDescripcion'] : $descripcion = "";
+isset($_REQUEST['txtId_municipio']) ? $id_municipio = $_REQUEST['txtId_municipio'] : $id_municipio = "";
 
 
-$sucursal = new Sucursal($idsucursal, $nombre, $descripcion, $municipio, $banco);
+$sucursal = new Sucursal($id_sucursal, $nombre, $descripcion, $id_municipio);
 $dao = new sucursalDAO();
 
 switch ($accion) {

@@ -14,6 +14,7 @@ isset($_REQUEST['nombre']) ? $nombre = $_REQUEST['nombre'] : $nombre = "";
 isset($_REQUEST['nickname']) ? $nickname = $_REQUEST['nickname'] : $nickname = "";
 isset($_REQUEST['password']) ? $password = $_REQUEST['password'] : $password = "";
 isset($_REQUEST['cargo']) ? $cargo = $_REQUEST['cargo'] : $cargo = "cliente";
+isset($_REQUEST['type'])? $type = $_REQUEST['type']: $type="";
 
 $usuario = new Usuario($id, $nombre, $nickname, $password,$cargo);
 $dao = new ClienteDAO();

@@ -3,6 +3,8 @@
 require '../Modelo/PaisM.php';
 require '../DAO/PaisDAO.php';
 
+isset($_REQUEST['txtId_pais']) ? $id_pais = $_REQUEST['txtId_pais'] : $id_pais = "";
+
 isset($_REQUEST['txtNombre']) ? $nombre = $_REQUEST['txtNombre'] : $nombre = "";
 isset($_REQUEST['txtDescripcion']) ? $descripcion = $_REQUEST['txtDescripcion'] : $descripcion = "";
 isset($_REQUEST['type']) ? $accion = $_REQUEST['type'] : $accion = "";
@@ -17,7 +19,7 @@ switch ($accion) {
     case "list":
         $dao->listar($pais);
         break;
-    
+
     case "search":
         $dao->buscar($pais);
         break;
@@ -25,7 +27,7 @@ switch ($accion) {
     case "update":
         $dao->modificar($pais);
         break;
-    
+
     case "delete":
         $dao->eliminar($pais);
         break;
