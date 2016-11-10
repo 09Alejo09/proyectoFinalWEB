@@ -1,21 +1,23 @@
 <?php
 
-
 class Departamento {
 
-   
-
+    private $id_departamento;
     private $nombre;
     private $descripcion;
-    private $departamento;
- 
+    private $id_pais;
 
-    function __construct($nombre, $descripcion, $departamento) {
-        $this->nombre= $nombre;
+    function __construct($id_departamento, $nombre, $descripcion, $departamento) {
+        $this->id_departamento;
+        $this->nombre = $nombre;
         $this->descripcion = $descripcion;
-        $this->pais = $departamento;
-      
+        $this->pais = $id_pais;
     }
+
+    function getId_departamento() {
+        return $this->id_departamento;
+    }
+
     function getNombre() {
         return $this->nombre;
     }
@@ -24,8 +26,12 @@ class Departamento {
         return $this->descripcion;
     }
 
-    function getDepartamento() {
-        return $this->departamento;
+    function getId_pais() {
+        return $this->id_pais;
+    }
+
+    function setId_departamento($id_departamento) {
+        $this->id_departamento = $id_departamento;
     }
 
     function setNombre($nombre) {
@@ -36,9 +42,8 @@ class Departamento {
         $this->descripcion = $descripcion;
     }
 
-    function setDepartamento($departamento) {
-        $this->departamento = $departamento;
+    function setId_pais($id_pais) {
+        $this->id_pais = $id_pais;
     }
-
 
 }

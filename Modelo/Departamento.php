@@ -15,18 +15,22 @@ class Departamento {
 
     //put your code here
 
-
+    private $id_pais;
     private $nombre;
     private $descripcion;
-    private $pais;
- 
+    private $id_pais;
 
-    function __construct($nombre, $descripcion, $pais) {
-        $this->nombre= $nombre;
+    function __construct($id_pais, $nombre, $descripcion, $pais) {
+        $this->id_pais = $id_pais;
+        $this->nombre = $nombre;
         $this->descripcion = $cedula;
-        $this->pais = $pais;
-      
+        $this->pais = $id_pais;
     }
+
+    function getId_pais() {
+        return $this->id_pais;
+    }
+
     function getNombre() {
         return $this->nombre;
     }
@@ -35,8 +39,12 @@ class Departamento {
         return $this->descripcion;
     }
 
-    function getPais() {
-        return $this->pais;
+    function getId_pais() {
+        return $this->id_pais;
+    }
+
+    function setId_pais($id_pais) {
+        $this->id_pais = $id_pais;
     }
 
     function setNombre($nombre) {
@@ -47,9 +55,8 @@ class Departamento {
         $this->descripcion = $descripcion;
     }
 
-    function setPais($pais) {
-        $this->pais = $pais;
+    function setId_pais($id_pais) {
+        $this->id_pais = $id_pais;
     }
-
 
 }

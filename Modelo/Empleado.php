@@ -16,27 +16,27 @@ class Empleado {
     //put your code here
 
 
-    private $idempleado;
+    private $id_empleado;
     private $cedula;
     private $nombre;
     private $edad;
     private $descripcion;
-    private $cargo;
-    private $idsucursal;
+    private $id_cargo;
+    private $id_sucursal;
 
-    function __construct($idempleado, $cedula, $nombre, $edad, $descripcion, $cargo, $idsucursal) {
+    function __construct($id_empleado, $cedula, $nombre, $edad, $descripcion, $id_cargo, $id_sucursal) {
 
-        $this->idempleado = $idempleado;
+        $this->id_empleado = $id_empleado;
         $this->cedula = $cedula;
         $this->nombre = $nombre;
         $this->edad = $edad;
         $this->descripcion = $descripcion;
-        $this->cargo = $cargo;
-        $this->idsucursal = $idsucursal;
+        $this->id_cargo = $id_cargo;
+        $this->id_sucursal = $id_sucursal;
     }
 
-    function getIdempleado() {
-        return $this->idempleado;
+    function getId_empleado() {
+        return $this->id_empleado;
     }
 
     function getCedula() {
@@ -55,16 +55,16 @@ class Empleado {
         return $this->descripcion;
     }
 
-    function getCargo() {
-        return $this->cargo;
+    function getId_cargo() {
+        return $this->id_cargo;
     }
 
-    function getIdsucursal() {
-        return $this->idsucursal;
+    function getId_Sucursal() {
+        return $this->id_sucursal;
     }
 
-    function setIdempleado($idempleado) {
-        $this->idempleado = $idempleado;
+    function setId_empleado($id_empleado) {
+        $this->id_empleado = $id_empleado;
     }
 
     function setCedula($cedula) {
@@ -83,12 +83,12 @@ class Empleado {
         $this->descripcion = $descripcion;
     }
 
-    function setCargo($cargo) {
-        $this->cargo = $cargo;
+    function setId_cargo($id_cargo) {
+        $this->id_cargo = $id_cargo;
     }
 
-    function setIdsucursal($idsucursal) {
-        $this->idsucursal = $idsucursal;
+    function setId_sucursal($descripcion) {
+        $this->id_sucursal = $id_sucursal;
     }
 
 }

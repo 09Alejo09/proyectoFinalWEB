@@ -14,12 +14,18 @@
 class Pais {
 
     //put your code here
+    private $id_pais;
     private $nombre;
     private $descripcion;
 
-    function __construct($nombre, $descripcion) {
+    function __construct($id_pais, $nombre, $descripcion) {
+        $this->id_pais = $id_pais;
         $this->nombre = $nombre;
         $this->descripcion = $descripcion;
+    }
+
+    function getId_pais() {
+        return $this->id_pais;
     }
 
     function getNombre() {
@@ -28,6 +34,10 @@ class Pais {
 
     function getDescripcion() {
         return $this->descripcion;
+    }
+
+    function setId_pais($id_pais) {
+        $this->id_pais = $id_pais;
     }
 
     function setNombre($nombre) {

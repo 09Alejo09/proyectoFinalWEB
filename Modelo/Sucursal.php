@@ -2,22 +2,22 @@
 
 class Sucursal {
 
-    private $idsucursal;
+    private $id_sucursal;
     private $nombre;
     private $descripcion;
-    private $municipio;
+    private $id_municipio;
     private $banco;
 
-    function __construct($idsucursal, $nombre, $descripcion, $municipio, $banco) {
-        $this->idsucursal = $idsucursal;
+    function __construct($id_sucursal, $nombre, $descripcion, $id_municipio, $banco) {
+        $this->id_sucursal = $id_sucursal;
         $this->nombre = $nombre;
         $this->descripcion = $descripcion;
-        $this->municipio = $municipio;
+        $this->id_municipio = $id_municipio;
         $this->banco = $banco;
     }
 
-    function getIdsucursal() {
-        return $this->idsucursal;
+    function getId_sucursal() {
+        return $this->id_sucursal;
     }
 
     function getNombre() {
@@ -28,7 +28,7 @@ class Sucursal {
         return $this->descripcion;
     }
 
-    function getMunicipio() {
+    function getId_Municipio() {
         return $this->municipio;
     }
 
@@ -36,8 +36,8 @@ class Sucursal {
         return $this->banco;
     }
 
-    function setIdsucursal($idsucursal) {
-        $this->idsucursal = $idsucursal;
+    function setId_sucursal($idsucursal) {
+        $this->id_sucursal = $idsucursal;
     }
 
     function setNombre($nombre) {
@@ -48,7 +48,7 @@ class Sucursal {
         $this->descripcion = $descripcion;
     }
 
-    function setMunicipio($municipio) {
+    function setI_Municipio($municipio) {
         $this->municipio = $municipio;
     }
 

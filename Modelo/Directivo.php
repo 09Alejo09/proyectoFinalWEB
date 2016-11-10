@@ -19,15 +19,15 @@ class Directivo {
     private $cedula;
     private $telefono;
     private $fechadenacimiento;
-    private $municipio;
+    private $id_municipio;
 
-    function __construct($nombre, $apellido, $cedula, $telefono, $fechadenacimiento, $municipio) {
+    function __construct($nombre, $apellido, $cedula, $telefono, $fechadenacimiento, $id_municipio) {
         $this->nombre = $nombre;
         $this->apellido = $apellido;
         $this->cedula = $cedula;
         $this->telefono = $telefono;
         $this->fechadenacimiento = $fechadenacimiento;
-        $this->municipio = $municipio;
+        $this->id_municipio = $id_municipio;
     }
 
     function getNombre() {
@@ -50,8 +50,8 @@ class Directivo {
         return $this->fechadenacimiento;
     }
 
-    function getMunicipio() {
-        return $this->municipio;
+    function getId_municipio() {
+        return $this->id_municipio;
     }
 
     function setNombre($nombre) {
@@ -74,8 +74,8 @@ class Directivo {
         $this->fechadenacimiento = $fechadenacimiento;
     }
 
-    function setMunicipio($municipio) {
-        $this->municipio = $municipio;
+    function setId_municipio($id_municipio) {
+        $this->id_municipio = $id_municipio;
     }
 
 }

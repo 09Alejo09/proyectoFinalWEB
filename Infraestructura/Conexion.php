@@ -61,6 +61,7 @@ class Conexion {
             return "";
         }
     }
+
     function respuesta($resultado, $page) {
         if ($resultado) {
             $mensaje = "Operación exitosa";

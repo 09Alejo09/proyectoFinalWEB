@@ -15,22 +15,22 @@ class Usuario {
 
     //put your code here    
 
-    private $id;
+    private $id_usuario;
     private $nombre;
     private $nickname;
     private $password;
     private $cargo;
 
-    function __construct($id, $nombre, $nickname, $password, $cargo) {
-        $this->id = $id;
+    function __construct($id_usuario, $nombre, $nickname, $password, $cargo) {
+        $this->id_usuario = $id_usuario;
         $this->nombre = $nombre;
         $this->nickname = $nickname;
         $this->password = $password;
         $this->cargo = $cargo;
     }
 
-    function getId() {
-        return $this->id;
+    function getId_usuario() {
+        return $this->id_usuario;
     }
 
     function getNombre() {
@@ -49,8 +49,8 @@ class Usuario {
         return $this->cargo;
     }
 
-    function setId($id) {
-        $this->id = $id;
+    function setId_usuario($id_usuario) {
+        $this->id_usuario = $id_usuario;
     }
 
     function setNombre($nombre) {
@@ -68,5 +68,7 @@ class Usuario {
     function setCargo($cargo) {
         $this->cargo = $cargo;
     }
+
+
 
 }

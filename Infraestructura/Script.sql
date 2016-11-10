@@ -68,7 +68,7 @@ foreign key(cargo) references cargo(nombre),
 foreign key(id_sucursal) references sucursal(id_sucursal)
 );
 
-﻿create table usuario(
+create table usuario(
 id_usuario serial primary key,
 nombre varchar(50),
 nickname varchar(15),
